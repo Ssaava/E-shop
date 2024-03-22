@@ -11,13 +11,16 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-
+import Logo from "./Header-Components/Logo";
 import ScrollTop from "../scroll/ScrollTop";
+import ShoppingCart from "./Header-Components/ShoppingCart";
 
 const pages = ["Everything", "Women", "Men", "Accessories"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
+const companyInfo = [
+  { title: "About us" },
+  { title: "Contact us", marginRight: 2 },
+];
 function Header() {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
@@ -42,44 +45,8 @@ function Header() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters id="back-to-top-anchor">
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />{" "}
-          {/**my icon goes here */}
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            E-SHOP
-          </Typography>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            E-SHOP
-          </Typography>
+          <Logo />
+
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
@@ -92,16 +59,34 @@ function Header() {
             ))}
           </Box>
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
-            <Typography variant="small" element="p">
+            {companyInfo.map((info) => {
+              return (
+                <Typography
+                  variant="subtitle2"
+                  component="a"
+                  target="/"
+                  sx={{ cursor: "pointer", marginRight: info.marginRight }}
+                >
+                  {info.title}
+                </Typography>
+              );
+            })}
+            {/* <Typography variant="subtitle2" component="a">
               Hello World
             </Typography>
-            <Typography variant="small" element="p">
-              Hello World
-            </Typography>{" "}
-            <Typography variant="small" element="p" sx={{ marginRight: 2 }}>
+            <Typography variant="subtitle2" component="a">
               Hello World
             </Typography>
+            <Typography
+              variant="subtitle2"
+              component="a"
+              sx={{ marginRight: 2 }}
+            >
+              Hello World
+            </Typography> */}
           </Box>
+          <ShoppingCart content="1" />
+
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
