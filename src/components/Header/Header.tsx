@@ -11,12 +11,16 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import Logo from "./Logo";
+import Logo from "./Header-Components/Logo";
 import ScrollTop from "../scroll/ScrollTop";
+import ShoppingCart from "./Header-Components/ShoppingCart";
 
 const pages = ["Everything", "Women", "Men", "Accessories"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
+const companyInfo = [
+  { title: "About us" },
+  { title: "Contact us", marginRight: 2 },
+];
 function Header() {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
@@ -55,7 +59,19 @@ function Header() {
             ))}
           </Box>
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
-            <Typography variant="subtitle2" component="a">
+            {companyInfo.map((info) => {
+              return (
+                <Typography
+                  variant="subtitle2"
+                  component="a"
+                  target="/"
+                  sx={{ cursor: "pointer", marginRight: info.marginRight }}
+                >
+                  {info.title}
+                </Typography>
+              );
+            })}
+            {/* <Typography variant="subtitle2" component="a">
               Hello World
             </Typography>
             <Typography variant="subtitle2" component="a">
@@ -67,8 +83,10 @@ function Header() {
               sx={{ marginRight: 2 }}
             >
               Hello World
-            </Typography>
+            </Typography> */}
           </Box>
+          <ShoppingCart content="1" />
+
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
