@@ -13,13 +13,14 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import Logo from "./Header-Components/Logo";
 import ScrollTop from "../scroll/ScrollTop";
+import Divider from "@mui/material/Divider";
 import ShoppingCart from "./Header-Components/ShoppingCart";
 
 const pages = ["Everything", "Women", "Men", "Accessories"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 const companyInfo = [
-  { title: "About us" },
-  { title: "Contact us", marginRight: 2 },
+  { id: 1, title: "About us" },
+  { id: 2, title: "Contact us", marginRight: 2 },
 ];
 function Header() {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -41,6 +42,7 @@ function Header() {
   };
 
   // end of the arrow
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -65,32 +67,20 @@ function Header() {
                   variant="subtitle2"
                   component="a"
                   target="/"
+                  key={info.id}
                   sx={{ cursor: "pointer", marginRight: info.marginRight }}
                 >
                   {info.title}
                 </Typography>
               );
             })}
-            {/* <Typography variant="subtitle2" component="a">
-              Hello World
-            </Typography>
-            <Typography variant="subtitle2" component="a">
-              Hello World
-            </Typography>
-            <Typography
-              variant="subtitle2"
-              component="a"
-              sx={{ marginRight: 2 }}
-            >
-              Hello World
-            </Typography> */}
           </Box>
           <ShoppingCart content="1" />
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Remy Sharp" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -116,6 +106,8 @@ function Header() {
               ))}
             </Menu>
           </Box>
+
+          {/* display the categories links */}
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
@@ -151,6 +143,24 @@ function Header() {
                     <Typography textAlign="center">{page}</Typography>
                   </MenuItem>
                 ))}
+                <Divider />
+                {companyInfo.map((info) => {
+                  return (
+                    <MenuItem key={info.id} onClick={handleCloseNavMenu}>
+                      <Typography
+                        textAlign="center"
+                        component="a"
+                        target="/"
+                        sx={{
+                          cursor: "pointer",
+                          marginRight: info.marginRight,
+                        }}
+                      >
+                        {info.title}
+                      </Typography>
+                    </MenuItem>
+                  );
+                })}
               </Menu>
             </Box>
           </Box>
