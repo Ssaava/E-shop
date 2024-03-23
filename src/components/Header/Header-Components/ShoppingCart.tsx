@@ -16,6 +16,7 @@ type Props = {
 };
 const ShoppingCart = ({ content }: Props) => {
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
+  const [cartItems, setCartItems] = useState<number>(0);
 
   const handleOpenUserMenu = (event: MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
@@ -54,7 +55,6 @@ const ShoppingCart = ({ content }: Props) => {
                   minWidth: "20px",
                   padding: "0px 6px",
                   height: "20px",
-
                   transform: "scale(1) translate(50%, -50%)",
                   transformOrigin: "100% 0% 0px",
                 }}
@@ -69,26 +69,34 @@ const ShoppingCart = ({ content }: Props) => {
           id="cart-appbar"
           anchorEl={anchorElUser}
           // anchorOrigin={{
-          //   vertical: "top",
+          //   vertical: "bottom",
           //   horizontal: "right",
           // }}
           keepMounted
           // transformOrigin={{
           //   vertical: "top",
-          //   horizontal: "right",
+          //   horizontal: "left",
           // }}
           open={Boolean(anchorElUser)}
           onClose={handleCloseUserMenu}
         >
-          {settings.map((setting) => (
-            <MenuItem
-              sx={{ width: "500px" }}
-              key={setting}
-              onClick={handleCloseUserMenu}
+          {cartItems != 0 ? (
+            settings.map((setting) => (
+              <MenuItem
+                sx={{ width: "500px" }}
+                key={setting}
+                onClick={handleCloseUserMenu}
+              >
+                <Typography textAlign="center">{setting}</Typography>
+              </MenuItem>
+            ))
+          ) : (
+            <Typography
+              sx={{ width: "500px", maxWidth: "100%", textAlign: "center" }}
             >
-              <Typography textAlign="center">{setting}</Typography>
-            </MenuItem>
-          ))}
+              No Items in the shopping cart
+            </Typography>
+          )}
         </Menu>
       </Box>
     </>
