@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import Logo from "./Header-Components/Logo";
 import ScrollTop from "../scroll/ScrollTop";
+import Divider from "@mui/material/Divider";
 import ShoppingCart from "./Header-Components/ShoppingCart";
 
 const pages = ["Everything", "Women", "Men", "Accessories"];
@@ -142,13 +143,7 @@ function Header() {
                     <Typography textAlign="center">{page}</Typography>
                   </MenuItem>
                 ))}
-                <Box
-                  sx={{
-                    width: "100%",
-                    height: "1.5px",
-                    backgroundColor: "#000111",
-                  }}
-                ></Box>
+                <Divider />
                 {companyInfo.map((info) => {
                   return (
                     <MenuItem key={info.id} onClick={handleCloseNavMenu}>
