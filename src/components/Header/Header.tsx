@@ -15,9 +15,16 @@ import Logo from "./Header-Components/Logo";
 import ScrollTop from "../scroll/ScrollTop";
 import Divider from "@mui/material/Divider";
 import ShoppingCart from "./Header-Components/ShoppingCart";
+import { ListItemIcon } from "@mui/material";
+import { Logout, PersonAdd, Settings } from "@mui/icons-material";
 
 const pages = ["Everything", "Women", "Men", "Accessories"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = [
+  { title: "Profile", icon: <PersonAdd fontSize="small" /> },
+  { title: "Account", icon: <PersonAdd fontSize="small" /> },
+  { title: "Settings", icon: <Settings fontSize="small" /> },
+  { title: "Logout", icon: <Logout fontSize="small" /> },
+];
 const companyInfo = [
   { id: 1, title: "About us" },
   { id: 2, title: "Contact us", marginRight: 2 },
@@ -100,8 +107,13 @@ function Header() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                // <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                //   <Typography textAlign="center">{setting}</Typography>
+                // </MenuItem>
+
+                <MenuItem key={setting.title} onClick={handleCloseUserMenu}>
+                  <ListItemIcon>{setting.icon}</ListItemIcon>
+                  <Typography textAlign="center">{setting.title}</Typography>
                 </MenuItem>
               ))}
             </Menu>
