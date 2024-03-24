@@ -17,6 +17,7 @@ type Props = {
 const ShoppingCart = ({ content }: Props) => {
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
   const [cartItems, setCartItems] = useState<number>(0);
+  setCartItems(0);
 
   const handleOpenUserMenu = (event: MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
