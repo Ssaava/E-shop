@@ -29,7 +29,11 @@ export const Logo = () => {
       <Link
         component={NavLink}
         to="/"
-        sx={{ display: "flex", alignItems: "center" }}
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          flexGrow: Number(screenWidth.width) <= 900 ? 1 : "unset",
+        }}
       >
         <AdbIcon
           sx={{
@@ -49,7 +53,7 @@ export const Logo = () => {
             display: { responsiveDesign },
             fontFamily: "monospace",
             fontWeight: 700,
-            flexGrow: Number(screenWidth.width) <= 900 ? 1 : "unset",
+
             letterSpacing: ".3rem",
             color: "white",
             textDecoration: "none",

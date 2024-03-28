@@ -13,9 +13,6 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 const theme = createTheme({
   components: {
     MuiMenu: {
-      // defaultProps: {
-      //   disableTop: true,
-      // },
       styleOverrides: {
         root: {
           top: 0,
@@ -65,13 +62,13 @@ const ShoppingCart = ({ content }: Props) => {
                   sx={{
                     position: "absolute",
                     top: 0,
-                    // right: 0,
                     display: "flex",
-                    borderRadius: "10px",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderRadius: "100%",
                     backgroundColor: "red",
                     fontWeight: "bold",
-                    minWidth: "20px",
-                    padding: "0px 6px",
+                    width: "20px",
                     height: "20px",
                     transform: "scale(1) translate(50%, -50%)",
                     transformOrigin: "100% 0% 0px",
