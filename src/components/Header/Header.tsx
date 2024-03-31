@@ -1,26 +1,24 @@
-import { useState, MouseEvent } from "react";
-import { NavLink } from "react-router-dom";
-import Link from "@mui/material/Link";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import Logo from "./Header-Components/Logo";
-import ScrollTop from "../scroll/ScrollTop";
-import Divider from "@mui/material/Divider";
-import ShoppingCart from "./Header-Components/ShoppingCart";
-import { ListItemIcon } from "@mui/material";
 import { Logout, PersonAdd, Settings } from "@mui/icons-material";
-import PagesLinks from "./Header-Components/pagesLinks";
+import { ListItemIcon } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Avatar from "@mui/material/Avatar";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import IconButton from "@mui/material/IconButton";
+import Link from "@mui/material/Link";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Toolbar from "@mui/material/Toolbar";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
+import { MouseEvent, useState } from "react";
+import { NavLink } from "react-router-dom";
+import ScrollTop from "../scroll/ScrollTop";
+import Logo from "./Header-Components/Logo";
+import ShoppingCart from "./Header-Components/ShoppingCart";
 
 import Categories from "./Header-Components/Categories";
+import PagesLinks from "./Header-Components/PagesLinks";
 
 const pages = ["Everything", "Women", "Men", "Accessories"];
 const settings = [
@@ -41,9 +39,16 @@ const settings = [
   },
   { title: "Logout", link: "log-out", icon: <Logout fontSize="small" /> },
 ];
-const companyInfo = [
-  { title: "About us", infolink: "about-us" },
-  { title: "Contact us", infolink: "contact-us", marginRight: 2 },
+
+type CompanyInfo = {
+  title: string;
+  infoLink: string;
+  marginRight?: number;
+};
+
+const companyInfo: CompanyInfo[] = [
+  { title: "About us", infoLink: "about-us" },
+  { title: "Contact us", infoLink: "contact-us", marginRight: 2 },
 ];
 function Header() {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -79,8 +84,8 @@ function Header() {
               return (
                 <Link
                   component={NavLink}
-                  to={info.link}
-                  key={info.id}
+                  to={info.infoLink}
+                  key={info.title}
                   sx={{
                     cursor: "pointer",
                     marginRight: info.marginRight,
@@ -130,8 +135,8 @@ function Header() {
             </Menu>
           </Box>
           <Categories
-            anchorElNav={anchorElNav}
-            handleCloseNavmanu={handleCloseNavMenu}
+            anchorElNav={anchorElNav!}
+            handleCloseNavMenu={handleCloseNavMenu}
             pages={pages}
             companyInfo={companyInfo}
             handleOpenNavMenu={handleOpenNavMenu}

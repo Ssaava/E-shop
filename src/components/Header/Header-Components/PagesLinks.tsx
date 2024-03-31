@@ -2,7 +2,7 @@ import { Box, Button } from "@mui/material";
 
 type Props = {
   pages: string[];
-  handleCloseNavMenu: object;
+  handleCloseNavMenu: () => void;
 };
 const PagesLinks = ({ pages, handleCloseNavMenu }: Props) => {
   return (

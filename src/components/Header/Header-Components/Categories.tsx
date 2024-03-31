@@ -7,11 +7,19 @@ import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink } from "react-router-dom";
+import { MouseEvent } from "react";
+
+type CompanyInfo = {
+  title: string;
+  infoLink: string;
+  marginRight?: number;
+};
 
 type Props = {
-  handleOpenNavMenu: object;
+  handleOpenNavMenu: (event: MouseEvent<HTMLElement>) => void;
+  handleCloseNavMenu: () => void;
   anchorElNav: HTMLElement;
-  companyInfo: string[];
+  companyInfo: CompanyInfo[];
   pages: string[] | number[];
 };
 const Categories = ({
@@ -60,12 +68,12 @@ const Categories = ({
               </MenuItem>
             ))}
             <Divider />
-            {companyInfo.map((info: number | string) => {
+            {companyInfo.map((info) => {
               return (
                 <MenuItem key={info.title} onClick={handleCloseNavMenu}>
                   <Link
                     component={NavLink}
-                    to={info.infolink}
+                    to={info.infoLink}
                     sx={{
                       cursor: "pointer",
                       marginRight: info.marginRight,
