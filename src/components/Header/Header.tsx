@@ -1,33 +1,54 @@
-import { useState, MouseEvent } from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import Logo from "./Header-Components/Logo";
-import ScrollTop from "../scroll/ScrollTop";
-import Divider from "@mui/material/Divider";
-import ShoppingCart from "./Header-Components/ShoppingCart";
-import { ListItemIcon } from "@mui/material";
 import { Logout, PersonAdd, Settings } from "@mui/icons-material";
+import { ListItemIcon } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Avatar from "@mui/material/Avatar";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import IconButton from "@mui/material/IconButton";
+import Link from "@mui/material/Link";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Toolbar from "@mui/material/Toolbar";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
+import { MouseEvent, useState } from "react";
+import { NavLink } from "react-router-dom";
+import ScrollTop from "../scroll/ScrollTop";
+import Logo from "./Header-Components/Logo";
+import ShoppingCart from "./Header-Components/ShoppingCart";
+
+import Categories from "./Header-Components/Categories";
+import PagesLinks from "./Header-Components/PagesLinks";
 
 const pages = ["Everything", "Women", "Men", "Accessories"];
 const settings = [
-  { title: "Profile", icon: <PersonAdd fontSize="small" /> },
-  { title: "Account", icon: <PersonAdd fontSize="small" /> },
-  { title: "Settings", icon: <Settings fontSize="small" /> },
-  { title: "Logout", icon: <Logout fontSize="small" /> },
+  {
+    title: "Profile",
+    link: "user-profile",
+    icon: <PersonAdd fontSize="small" />,
+  },
+  {
+    title: "Account",
+    link: "user-account",
+    icon: <PersonAdd fontSize="small" />,
+  },
+  {
+    title: "Settings",
+    link: "user-settings",
+    icon: <Settings fontSize="small" />,
+  },
+  { title: "Logout", link: "log-out", icon: <Logout fontSize="small" /> },
 ];
-const companyInfo = [
-  { id: 1, title: "About us" },
-  { id: 2, title: "Contact us", marginRight: 2 },
+
+type CompanyInfo = {
+  title: string;
+  infoLink: string;
+  marginRight?: number;
+};
+
+const companyInfo: CompanyInfo[] = [
+  { title: "About us", infoLink: "about-us" },
+  { title: "Contact us", infoLink: "contact-us", marginRight: 2 },
 ];
 function Header() {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -51,34 +72,29 @@ function Header() {
   // end of the arrow
 
   return (
-    <AppBar position="static">
+    <AppBar>
       <Container maxWidth="xl">
         <Toolbar disableGutters id="back-to-top-anchor">
           <Logo />
 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
+          <PagesLinks pages={pages} handleCloseNavMenu={handleCloseNavMenu} />
+
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
             {companyInfo.map((info) => {
               return (
-                <Typography
-                  variant="subtitle2"
-                  component="a"
-                  target="/"
-                  key={info.id}
-                  sx={{ cursor: "pointer", marginRight: info.marginRight }}
+                <Link
+                  component={NavLink}
+                  to={info.infoLink}
+                  key={info.title}
+                  sx={{
+                    cursor: "pointer",
+                    marginRight: info.marginRight,
+                    color: "white",
+                    textDecoration: "none",
+                  }}
                 >
                   {info.title}
-                </Typography>
+                </Link>
               );
             })}
           </Box>
@@ -118,64 +134,13 @@ function Header() {
               ))}
             </Menu>
           </Box>
-
-          {/* display the categories links */}
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "block", md: "none" },
-                }}
-              >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
-                  </MenuItem>
-                ))}
-                <Divider />
-                {companyInfo.map((info) => {
-                  return (
-                    <MenuItem key={info.id} onClick={handleCloseNavMenu}>
-                      <Typography
-                        textAlign="center"
-                        component="a"
-                        target="/"
-                        sx={{
-                          cursor: "pointer",
-                          marginRight: info.marginRight,
-                        }}
-                      >
-                        {info.title}
-                      </Typography>
-                    </MenuItem>
-                  );
-                })}
-              </Menu>
-            </Box>
-          </Box>
+          <Categories
+            anchorElNav={anchorElNav!}
+            handleCloseNavMenu={handleCloseNavMenu}
+            pages={pages}
+            companyInfo={companyInfo}
+            handleOpenNavMenu={handleOpenNavMenu}
+          />
         </Toolbar>
       </Container>
       <ScrollTop />
