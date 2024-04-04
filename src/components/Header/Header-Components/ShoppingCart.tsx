@@ -5,10 +5,10 @@ import { ShoppingCartOutlined } from "@mui/icons-material";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { Button, Drawer } from "@mui/material";
+import DrawerList from "./DrawerList";
 
 const theme = createTheme({
   components: {
@@ -23,21 +23,23 @@ const theme = createTheme({
     },
   },
 });
-const settings = ["Item 1"];
+const cartItems = ["Item 1"];
 type Props = {
   content: string | number;
 };
 const ShoppingCart = ({ content }: Props) => {
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
-  const [cartItems, setCartItems] = useState<number>(0);
+  const [toggleDrawerOpen, setToggleDrawerOpen] = useState<boolean>(false);
+  const [cartItemsTotal, setCartItems] = useState<number>(0);
 
+  console.log(anchorElUser);
   const handleOpenUserMenu = (event: MouseEvent<HTMLElement>) => {
     setCartItems(0);
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
+  const handleCloseDrawer = () => {
+    setToggleDrawerOpen(false);
   };
   return (
     <>
@@ -53,9 +55,14 @@ const ShoppingCart = ({ content }: Props) => {
                   alignItems: "center",
                 }}
               >
-                <ShoppingCartOutlined
-                  sx={{ marginRight: 2, cursor: "pointer", color: "#fff" }}
-                />
+                <Button
+                  sx={{ minWidth: "unset", padding: "unset" }}
+                  onClick={() => setToggleDrawerOpen(true)}
+                >
+                  <ShoppingCartOutlined
+                    sx={{ marginRight: 2, cursor: "pointer", color: "#fff" }}
+                  />
+                </Button>
                 <Typography
                   variant="caption"
                   component="span"
@@ -79,45 +86,15 @@ const ShoppingCart = ({ content }: Props) => {
               </Box>
             </IconButton>
           </Tooltip>
-          <Menu
-            sx={{ backgroundColor: "rgba(0,0,0,0.5)" }}
-            id="cart-appbar"
-            anchorEl={anchorElUser}
-            // anchorOrigin={{
-            //   vertical: "bottom",
-            //   horizontal: "right",
-            // }}
-            keepMounted
-            // transformOrigin={{
-            //   vertical: "top",
-            //   horizontal: "left",
-            // }}
-            open={Boolean(anchorElUser)}
-            onClose={handleCloseUserMenu}
+
+          {/* drawer list items */}
+          <Drawer
+            open={toggleDrawerOpen}
+            onClose={() => handleCloseDrawer()}
+            anchor="right"
           >
-            {cartItems != 0 ? (
-              settings.map((setting) => (
-                <MenuItem
-                  // sx={{ width: "500px" }}
-                  key={setting}
-                  onClick={handleCloseUserMenu}
-                >
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))
-            ) : (
-              <Typography
-                sx={{
-                  // width: "500px",
-                  // maxWidth: "100%",
-                  textAlign: "center",
-                  // backgroundColor: "red",
-                }}
-              >
-                No Items in the shopping cart
-              </Typography>
-            )}
-          </Menu>
+            <DrawerList cartItemsTotal={cartItemsTotal} cartItems={cartItems} />
+          </Drawer>
         </Box>
       </ThemeProvider>
     </>
