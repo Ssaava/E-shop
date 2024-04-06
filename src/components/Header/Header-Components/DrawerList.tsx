@@ -10,10 +10,10 @@ import ListItemText from "@mui/material/ListItemText";
 const DrawerList = () => {
   return (
     <>
-      <Box sx={{ width: 400 }}>
+      <Box sx={{ width: { xs: 250, md: 400 } }}>
         <List>
           <ListItem key={""}>
-            <ListItemButton onClick={() => console.log("")}>
+            <ListItemButton onClick={() => console.log()}>
               <ListItemIcon>
                 <ArrowBack />
               </ListItemIcon>

@@ -1,24 +1,21 @@
 import { Logout, PersonAdd, Settings } from "@mui/icons-material";
-import { ListItemIcon } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
-import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
+import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import Link from "@mui/material/Link";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
-import Tooltip from "@mui/material/Tooltip";
-import Typography from "@mui/material/Typography";
-import { MouseEvent, useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import ScrollTop from "../scroll/ScrollTop";
+import Categories from "./Header-Components/Categories";
 import Logo from "./Header-Components/Logo";
 import ShoppingCart from "./Header-Components/ShoppingCart";
 
-import Categories from "./Header-Components/Categories";
 import PagesLinks from "./Header-Components/PagesLinks";
+import ProfileIcon from "./Header-Components/ProfileIcon";
 
 const pages = ["Everything", "Women", "Men", "Accessories"];
 const settings = [
@@ -50,34 +47,19 @@ const companyInfo: CompanyInfo[] = [
   { title: "About us", infoLink: "about-us" },
   { title: "Contact us", infoLink: "contact-us", marginRight: 2 },
 ];
+
 function Header() {
-  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
-
-  const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
+  const [toggleDrawer, setToggleDrawer] = useState<boolean>(false);
+  const handleCloseDrawer = () => {
+    setToggleDrawer(false);
   };
-  const handleOpenUserMenu = (event: MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
-  // end of the arrow
-
   return (
     <AppBar>
       <Container maxWidth="xl">
         <Toolbar disableGutters id="back-to-top-anchor">
           <Logo />
 
-          <PagesLinks pages={pages} handleCloseNavMenu={handleCloseNavMenu} />
+          <PagesLinks pages={pages} />
 
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
             {companyInfo.map((info) => {
@@ -100,48 +82,29 @@ function Header() {
           </Box>
 
           <ShoppingCart content="1" />
+          <ProfileIcon />
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" />
+          {/* display the categories links */}
+          <Box sx={{ display: { xs: "flex", md: "none" } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+              <IconButton size="large" onClick={() => setToggleDrawer(true)}>
+                <MenuIcon />
               </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                // <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                //   <Typography textAlign="center">{setting}</Typography>
-                // </MenuItem>
-
-                <MenuItem key={setting.title} onClick={handleCloseUserMenu}>
-                  <ListItemIcon>{setting.icon}</ListItemIcon>
-                  <Typography textAlign="center">{setting.title}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+            </Box>
           </Box>
-          <Categories
-            anchorElNav={anchorElNav!}
-            handleCloseNavMenu={handleCloseNavMenu}
-            pages={pages}
-            companyInfo={companyInfo}
-            handleOpenNavMenu={handleOpenNavMenu}
-          />
+
+          <Drawer
+            open={toggleDrawer}
+            onClose={() => handleCloseDrawer()}
+            anchor="right"
+          >
+            <Categories
+              companyInfo={companyInfo}
+              pages={pages}
+              handleCloseDrawer={handleCloseDrawer}
+              settings={settings}
+            />
+          </Drawer>
         </Toolbar>
       </Container>
       <ScrollTop />
