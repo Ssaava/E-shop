@@ -42,10 +42,12 @@ const ShoppingCart = ({ content }: Props) => {
 
   const handleCloseDrawer = () => {
     setToggleDrawerOpen(false);
+    setCartItems(1);
   };
   return (
     <>
       {/* with the menu */}
+
       <ThemeProvider theme={theme}>
         <Box>
           <Tooltip title="Open Cart">
