@@ -98,6 +98,7 @@ function Header() {
               );
             })}
           </Box>
+
           <ShoppingCart content="1" />
 
           <Box sx={{ flexGrow: 0 }}>
