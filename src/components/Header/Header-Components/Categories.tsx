@@ -1,10 +1,10 @@
+import Avatar from "@mui/material/Avatar";
 import Divider from "@mui/material/Divider";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import ProfileIcon from "./ProfileIcon";
+import ListItemText from "@mui/material/ListItemText";
 
 import Box from "@mui/material/Box";
 import { NavLink } from "react-router-dom";
@@ -19,18 +19,9 @@ type Props = {
   companyInfo: CompanyInfo[];
   pages: string[] | number[];
   handleCloseDrawer: () => void;
-  settings: {
-    title: string;
-    link: string;
-    icon: JSX.Element;
-  };
 };
-const Categories = ({
-  companyInfo,
-  pages,
-  handleCloseDrawer,
-  settings,
-}: Props) => {
+
+const Categories = ({ companyInfo, pages, handleCloseDrawer }: Props) => {
   return (
     <>
       {/* display the categories links */}
@@ -39,19 +30,11 @@ const Categories = ({
           <ListItem>
             <ListItemButton onClick={() => handleCloseDrawer()}>
               <ListItemIcon>
-                <ProfileIcon />
+                <Avatar alt="Remy Sharp" sx={{ color: "black" }} />
               </ListItemIcon>
               <ListItemText>Profile</ListItemText>
             </ListItemButton>
           </ListItem>
-          <Divider />
-          {settings.map((setting) => (
-            <ListItem key={setting.title}>
-              <ListItemButton onClick={() => handleCloseDrawer()}>
-                <ListItemText>{setting.title}</ListItemText>
-              </ListItemButton>{" "}
-            </ListItem>
-          ))}
           <Divider />
           {pages.map((page) => (
             <ListItem key={page}>
