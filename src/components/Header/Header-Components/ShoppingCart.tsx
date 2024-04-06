@@ -7,7 +7,10 @@ import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { Button, Drawer, ListItem, ListItemButton } from "@mui/material";
+import Button from "@mui/material/Button";
+import Drawer from "@mui/material/Drawer";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
 import DrawerList from "./DrawerList";
 
 const theme = createTheme({
