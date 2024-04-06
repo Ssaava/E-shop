@@ -32,7 +32,7 @@ export const Logo = () => {
         sx={{
           display: "flex",
           alignItems: "center",
-          flexGrow: Number(screenWidth.width) <= 900 ? 1 : "unset",
+          flexGrow: Number(screenWidth.width <= 900 ? 1 : "unset"),
         }}
       >
         <AdbIcon

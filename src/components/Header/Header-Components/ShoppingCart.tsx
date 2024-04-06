@@ -42,10 +42,12 @@ const ShoppingCart = ({ content }: Props) => {
 
   const handleCloseDrawer = () => {
     setToggleDrawerOpen(false);
+    setCartItems(1);
   };
   return (
     <>
       {/* with the menu */}
+
       <ThemeProvider theme={theme}>
         <Box>
           <Tooltip title="Open Cart">
@@ -62,11 +64,18 @@ const ShoppingCart = ({ content }: Props) => {
                     minWidth: "unset",
                     padding: "unset",
                     position: "relative",
+                    width: "10px",
                   }}
                   onClick={() => setToggleDrawerOpen(true)}
                 >
                   <ShoppingCartOutlined
-                    sx={{ marginRight: 2, cursor: "pointer", color: "#fff" }}
+                    sx={{
+                      marginRight: 2,
+                      cursor: "pointer",
+                      color: "#fff",
+                      width: "28px",
+                      height: "28px",
+                    }}
                   />
 
                   <Typography
