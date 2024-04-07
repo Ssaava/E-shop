@@ -12,6 +12,7 @@ import { NavLink } from "react-router-dom";
 type CompanyInfo = {
   title: string;
   infoLink: string;
+  icon: JSX.Element;
   marginRight?: number;
 };
 
@@ -52,6 +53,7 @@ const Categories = ({ companyInfo, pages, handleCloseDrawer }: Props) => {
                   to={info.infoLink}
                   onClick={() => handleCloseDrawer()}
                 >
+                  <ListItemIcon>{info.icon}</ListItemIcon>
                   <ListItemText>{info.title}</ListItemText>
                 </ListItemButton>
               </ListItem>

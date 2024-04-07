@@ -64,7 +64,7 @@ const ShoppingCart = ({ content }: Props) => {
                     minWidth: "unset",
                     padding: "unset",
                     position: "relative",
-                    width: "10px",
+                    width: { xs: "10px", md: "auto" },
                   }}
                   onClick={() => setToggleDrawerOpen(true)}
                 >
@@ -73,8 +73,8 @@ const ShoppingCart = ({ content }: Props) => {
                       marginRight: 2,
                       cursor: "pointer",
                       color: "#fff",
-                      width: "28px",
-                      height: "28px",
+                      width: { xs: "28px" },
+                      height: { xs: "28px" },
                     }}
                   />
 
