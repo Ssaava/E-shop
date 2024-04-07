@@ -90,7 +90,7 @@ function Header() {
     setAnchorEl(null);
   };
   return (
-    <AppBar>
+    <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters id="back-to-top-anchor">
           <Logo />
