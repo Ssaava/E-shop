@@ -1,7 +1,7 @@
 const Home = () => {
   return (
     <>
-      <p>This is the Home Page</p>
+      <p style={{ backgroundColor: "red" }}>This is the Home Page</p>
     </>
   );
 };
