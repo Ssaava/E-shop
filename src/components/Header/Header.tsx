@@ -1,4 +1,8 @@
-import { Logout, PersonAdd, Settings } from "@mui/icons-material";
+import Logout from "@mui/icons-material/Logout";
+import PersonAdd from "@mui/icons-material/PersonAdd";
+import Settings from "@mui/icons-material/Settings";
+import InfoIconOutlined from "@mui/icons-material/InfoOutlined";
+import CallIcon from "@mui/icons-material/Call";
 import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -49,11 +53,21 @@ type CompanyInfo = {
   title: string;
   infoLink: string;
   marginRight?: number;
+  icon: JSX.Element;
 };
 
 const companyInfo: CompanyInfo[] = [
-  { title: "About us", infoLink: "about-us" },
-  { title: "Contact us", infoLink: "contact-us", marginRight: 2 },
+  {
+    title: "About us",
+    infoLink: "about-us",
+    icon: <InfoIconOutlined fontSize="small" />,
+  },
+  {
+    title: "Contact us",
+    infoLink: "contact-us",
+    icon: <CallIcon fontSize="small" />,
+    marginRight: 2,
+  },
 ];
 
 function Header() {
@@ -76,7 +90,7 @@ function Header() {
     setAnchorEl(null);
   };
   return (
-    <AppBar>
+    <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters id="back-to-top-anchor">
           <Logo />
