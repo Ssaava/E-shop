@@ -14,6 +14,7 @@ import ProductDetails from "./pages/ProductDetailsPage/ProductDetails";
 import Products from "./pages/ProductsPage/Products";
 import Profile from "./pages/ProfilePage/Profile";
 import SignIn from "./pages/Sign-inPage/SignIn";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,7 +28,7 @@ const router = createBrowserRouter(
       <Route path="details" element={<ProductDetails />} />
       <Route path="products" element={<Products />} />
       <Route path="user-profile" element={<Profile />} />
-      <Route path="*" element={<p>Not found</p>} />
+      <Route path="*" element={<PageNotFound />} />
     </Route>
   )
 );
