@@ -94,7 +94,7 @@ function Header() {
       position="static"
       sx={{
         padding: 2,
-        background: "rgba(6, 147, 227, 0.1)",
+        background: "rgba(0, 0, 0, 0.05)",
         boxShadow: "unset",
       }}
     >
