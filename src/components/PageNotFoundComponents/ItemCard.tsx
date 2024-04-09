@@ -3,13 +3,14 @@ import CardActionArea from "@mui/material/CardActionArea/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography/Typography";
-
+import dress from "../../assets/dress.png";
+import { NavLink } from "react-router-dom";
 export default function MediaCard() {
   return (
     <Card sx={{ width: "12.5rem", height: "15.625rem", boxShadow: "unset" }}>
-      <CardActionArea>
+      <CardActionArea component={NavLink} to="/">
         <CardMedia
-          image="../../../public/dress.png"
+          image={dress}
           title="green iguana"
           sx={{
             textAlign: "center",

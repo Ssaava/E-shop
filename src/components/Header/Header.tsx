@@ -90,7 +90,14 @@ function Header() {
     setAnchorEl(null);
   };
   return (
-    <AppBar position="static">
+    <AppBar
+      position="static"
+      sx={{
+        padding: 2,
+        background: "rgba(0, 0, 0, 0.05)",
+        boxShadow: "unset",
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters id="back-to-top-anchor">
           <Logo />
@@ -151,7 +158,6 @@ function Header() {
                   right: 14,
                   width: 10,
                   height: 10,
-                  bgcolor: "background.paper",
                   transform: "translateY(-50%) rotate(45deg)",
                   zIndex: 0,
                 },
