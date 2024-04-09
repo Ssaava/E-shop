@@ -41,21 +41,44 @@ const Home = () => {
       >
         <Box
           sx={{
-            background: "red",
+            color: "white",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             paddingInline: { xs: "5%", md: "10%" },
-            alignItems: "center",
           }}
         >
-          <Typography sx={{ fontSize: 72, fontWeight: "bold" }}>
+          <Typography sx={{ fontSize: { xs: 54, md: 72 }, fontWeight: "bold" }}>
             Raining Offers For Hot Summer!
           </Typography>
-          <Typography>25% Off On All Products</Typography>
+          <Typography sx={{ fontSize: 18, marginBlock: 4 }}>
+            25% Off On All Products
+          </Typography>
           <Box>
-            <Button>SHOP NOW</Button>
-            <Button>Find More</Button>
+            <Button
+              color={"primary"}
+              variant="contained"
+              sx={{
+                borderRadius: "unset",
+                fontSize: 20,
+                marginRight: 2,
+                boxShadow: "unset",
+              }}
+            >
+              SHOP NOW
+            </Button>
+            <Button
+              variant="outlined"
+              sx={{
+                borderRadius: "unset",
+                fontSize: 20,
+                boxShadow: "unset",
+                border: "1px solid white",
+                color: "white",
+              }}
+            >
+              Find More
+            </Button>
           </Box>
         </Box>
       </Box>
