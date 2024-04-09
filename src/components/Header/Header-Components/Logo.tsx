@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import AdbIcon from "@mui/icons-material/Adb";
+import logo from "../../../assets/logo.png";
 
 import { Link, Typography } from "@mui/material";
 
@@ -29,38 +29,18 @@ export const Logo = () => {
       <Link
         component={NavLink}
         to="/"
+        noWrap
         sx={{
-          display: "flex",
+          display: { responsiveDesign },
           alignItems: "center",
           flexGrow: Number(screenWidth.width <= 900 ? 1 : "unset"),
         }}
       >
-        <AdbIcon
-          sx={{
-            display: { responsiveDesign },
-            mr: 1,
-            color: "white",
-          }}
-        />{" "}
-        {/**my icon goes here */}
         <Typography
-          variant="h6"
-          noWrap
-          component="a"
-          href="#app-bar-with-responsive-menu"
-          sx={{
-            mr: 2,
-            display: { responsiveDesign },
-            fontFamily: "monospace",
-            fontWeight: 700,
-
-            letterSpacing: ".3rem",
-            color: "white",
-            textDecoration: "none",
-          }}
-        >
-          E-SHOP
-        </Typography>
+          component="img"
+          src={logo}
+          sx={{ width: 150, objectFit: "cover" }}
+        />
       </Link>
     </>
   );
