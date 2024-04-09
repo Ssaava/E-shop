@@ -1,28 +1,25 @@
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import CardHeader from "@mui/material/CardHeader/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography/Typography";
 
 export default function MediaCard() {
   return (
-    <Card sx={{ maxWidth: 248, height: 402 }}>
+    <Card sx={{ maxWidth: 200, height: 250 }}>
       <CardMedia
-        sx={{ height: 300 }}
+        sx={{ height: 198 }}
         image="../../../public/dress.png"
         title="green iguana"
       />
       <CardContent>
-        <CardHeader
-          subheaderTypographyProps={{
-            sx: {
-              "& .MuiCardHeader-title": {
-                fontSize: "100px",
-              },
-            },
-          }}
-          title="DNK YELLOW SHOES"
-          subheader="Men"
-        />
+        <Typography
+          component="h3"
+          fontSize={18}
+          textAlign="center"
+          variant="h3"
+        >
+          New in
+        </Typography>
       </CardContent>
     </Card>
   );
