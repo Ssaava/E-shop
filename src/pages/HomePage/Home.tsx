@@ -29,17 +29,15 @@ const Home = () => {
       <Box
         sx={{
           width: "100vw",
-          background: "red",
           margin: "auto 0",
           display: "grid",
-          gridTemplateColumns: { md: "1.5fr 1fr" },
+          gridTemplateColumns: { md: "2.5fr 1fr" },
         }}
       >
         <Box
           sx={{
             color: "white",
-            paddingInline: { xs: "5%", md: "10%" },
-            background: "green",
+            paddingInline: "calc(18% - 2.5rem)",
             // height: "max(50vw, 100vh - 117.317px)",
           }}
         >

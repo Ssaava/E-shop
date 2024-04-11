@@ -8,7 +8,6 @@ const HeroSection = () => {
       <Box
         sx={{
           width: "100%",
-          background: "red",
           marginBlock: "clamp(3rem, 7.5vw + 1.5rem, 200px)",
         }}
       >
