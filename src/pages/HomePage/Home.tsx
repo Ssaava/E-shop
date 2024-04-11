@@ -1,51 +1,33 @@
 import Box from "@mui/material/Box";
-import HeroSection from "../../components/HeroSection/HeroSection";
+import HeroSection from "../../components/HomeComponents/HeroSection";
+import Background from "../../components/HomeComponents/Background";
 const Home = () => {
   return (
     <>
+      {/* The Home Page */}
       <Box
         sx={{
-          backgroundColor: "#166894",
-          width: "100vw",
-          height: "100vh",
-          position: { xs: "absolute", md: "fixed" },
-          top: 0,
-          left: 0,
-          zIndex: -1,
-          margin: 0,
-        }}
-      >
-        {/* <Typography
-          component="img"
-          src={woman}
-          sx={{
-            width: 400,
-            display: "block",
-            objectFit: "cover",
-            marginLeft: "auto",
-          }}
-        /> */}
-      </Box>
-      <Box
-        sx={{
+          paddingInline: "calc(18% - 2.5rem)",
           width: "100vw",
           margin: "auto 0",
-          display: "grid",
-          gridTemplateColumns: { md: "2.5fr 1fr" },
+          // height: "max(50vw, 100vh - 117.317px)",
         }}
       >
-        <Box
-          sx={{
-            color: "white",
-            paddingInline: "calc(18% - 2.5rem)",
-            // height: "max(50vw, 100vh - 117.317px)",
-          }}
-        >
-          <HeroSection />
-        </Box>
+        <Background />
+        <HeroSection />
+        {/* items section */}
       </Box>
-
-      <Box>height</Box>
+      <Box
+        sx={{
+          background: "white",
+          paddingBlock: "4rem",
+          paddingInline: "calc(18% - 2.5rem)",
+          height: "auto",
+          minHeight: "100vh",
+        }}
+      >
+        items
+      </Box>
     </>
   );
 };
