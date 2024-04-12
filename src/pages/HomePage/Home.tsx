@@ -1,7 +1,7 @@
+import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
-import HeroSection from "../../components/HomeComponents/HeroSection";
 import Background from "../../components/HomeComponents/Background";
-import { Grid, Typography } from "@mui/material";
+import HeroSection from "../../components/HomeComponents/HeroSection";
 import ProductCard from "../../components/HomeComponents/ProductCard";
 const Home = () => {
   return (
@@ -42,23 +42,25 @@ const Home = () => {
             Featured Products
           </Typography>
           {/* Products go here */}
-          <Box sx={{ marginBlock: 8, width: "100%" }}>
-            <Grid
-              container
-              spacing={2}
-              // sx={{ background: "red", padding: "unset" }}
+          <Box
+            sx={{ marginBlock: 8, width: "100%", backgroundColor: "F5F7F9" }}
+          >
+            <Box
+              sx={{
+                padding: "unset",
+                display: "grid",
+                gridTemplateColumns: {
+                  md: "repeat(5, 1fr)",
+                  sm: "repeat(3, 1fr)",
+                  xs: "repeat(2, 1fr)",
+                },
+                gap: { xs: 1, sm: 2 },
+              }}
             >
               <ProductCard /> <ProductCard /> <ProductCard /> <ProductCard />{" "}
               <ProductCard /> <ProductCard /> <ProductCard /> <ProductCard />{" "}
-              <ProductCard /> <ProductCard /> <ProductCard /> <ProductCard />{" "}
-              <ProductCard /> <ProductCard /> <ProductCard /> <ProductCard />{" "}
               <ProductCard /> <ProductCard />
-              <ProductCard /> <ProductCard /> <ProductCard /> <ProductCard />{" "}
-              <ProductCard /> <ProductCard /> <ProductCard /> <ProductCard />{" "}
-              <ProductCard /> <ProductCard /> <ProductCard /> <ProductCard />{" "}
-              <ProductCard /> <ProductCard /> <ProductCard /> <ProductCard />{" "}
-              <ProductCard /> <ProductCard />
-            </Grid>
+            </Box>
           </Box>
         </Box>
       </Box>
