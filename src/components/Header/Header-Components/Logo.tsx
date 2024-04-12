@@ -39,7 +39,7 @@ export const Logo = () => {
         <Typography
           component="img"
           src={logo}
-          sx={{ width: 150, objectFit: "cover" }}
+          sx={{ width: 65, objectFit: "cover", marginRight: 2 }}
         />
       </Link>
     </>
