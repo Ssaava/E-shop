@@ -42,7 +42,9 @@ const Home = () => {
             Featured Products
           </Typography>
           {/* Products go here */}
-          <Box sx={{ marginBlock: 8, width: "100%" }}>
+          <Box
+            sx={{ marginBlock: 8, width: "100%", backgroundColor: "F5F7F9" }}
+          >
             <Box
               sx={{
                 padding: "unset",
