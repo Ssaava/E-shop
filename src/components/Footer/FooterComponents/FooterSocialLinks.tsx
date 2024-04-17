@@ -20,7 +20,7 @@ const FooterSocialLinks = () => {
           gap: 2,
         }}
       >
-        <Box sx={{ flexBasis: { sm: "50%" } }}>
+        <Box sx={{ flexBasis: { sm: "50%" }, fontSize: "0.9rem" }}>
           Copyright © 2024 Black Apple Store. Powered by BlackApple.
         </Box>
         <Box

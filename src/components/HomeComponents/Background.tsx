@@ -25,7 +25,7 @@ const Background = () => {
           left: 0,
           zIndex: -1,
           margin: 0,
-          display: displayValue,
+          display: { md: displayValue },
           gridTemplateColumns: { md: "1fr 1fr" },
         }}
       >
