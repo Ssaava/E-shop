@@ -1,6 +1,7 @@
 import { Divider, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import Logo from "../Header/Header-Components/Logo";
+import logo from "../../assets/black-logo.png";
 
 export default function Footer() {
   return (
@@ -44,7 +45,7 @@ export default function Footer() {
                 paddingBlock: 5,
               }}
             >
-              <Logo />
+              <Logo src={logo} />
             </Box>
             <Box>The best look anytime, anywhere.</Box>
           </Box>
