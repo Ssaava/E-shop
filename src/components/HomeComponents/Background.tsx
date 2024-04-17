@@ -18,15 +18,23 @@ const Background = () => {
           gridTemplateColumns: { md: "1fr 1fr" },
         }}
       >
-        <Box></Box>
-        <Box>
+        <Box
+          sx={{
+            display: { sm: "none", xs: "none", md: "block" },
+          }}
+        ></Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "flex-end",
+          }}
+        >
           <Typography
             component="img"
             src={dress}
             sx={{
-              width: "clamp(29.6875rem, 19.8539rem + 37.9126vw, 56.25rem)",
-              display: "block",
-              marginInline: "auto",
+              width: "100%",
+              margin: "auto 0",
             }}
           />
         </Box>
