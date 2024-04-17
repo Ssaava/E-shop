@@ -1,7 +1,18 @@
 import Box from "@mui/material/Box/Box";
 import dress from "../../assets/shoes.png";
 import Typography from "@mui/material/Typography";
+import { useState } from "react";
 const Background = () => {
+  const [displayValue, setDisplayValue] = useState<string>("grid");
+  window.addEventListener("scroll", () => {
+    const { scrollTop } = document.documentElement;
+
+    if (scrollTop <= 750) {
+      setDisplayValue("grid");
+    } else {
+      setDisplayValue("none");
+    }
+  });
   return (
     <>
       <Box
@@ -14,7 +25,7 @@ const Background = () => {
           left: 0,
           zIndex: -1,
           margin: 0,
-          display: "grid",
+          display: displayValue,
           gridTemplateColumns: { md: "1fr 1fr" },
         }}
       >

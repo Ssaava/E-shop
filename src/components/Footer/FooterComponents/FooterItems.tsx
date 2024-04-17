@@ -52,7 +52,14 @@ const FooterItems = () => {
             >
               <Logo src={logo} />
             </Box>
-            <Box>The best look anytime, anywhere.</Box>
+            <Box
+              sx={{
+                fontSize: "clamp(1rem, 0.9626rem + 0.2994vw, 1.25rem)",
+                fontWeight: "bolder",
+              }}
+            >
+              The best look anytime, anywhere.
+            </Box>
           </Box>
           <ThemeProvider theme={theme}>
             <FooterLinks title="For Her">

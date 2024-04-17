@@ -18,7 +18,13 @@ export default function Footer() {
           paddingInline: "calc(9% - 1rem)",
         }}
       >
-        <Typography textAlign={"left"}>
+        <Typography
+          textAlign={"left"}
+          sx={{
+            fontSize: "clamp(1.125rem, 1.0501rem + 0.5988vw, 1.625rem)",
+            fontWeight: "bold",
+          }}
+        >
           SALE UP TO 70% OFF FOR ALL CLOTHES & FASHION ITEMS, ON ALL BRANDS.
         </Typography>
       </Box>
