@@ -1,6 +1,7 @@
 import { Divider, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import FooterItems from "./FooterComponents/FooterItems";
+import FooterSocialLinks from "./FooterComponents/FooterSocialLinks";
 
 export default function Footer() {
   return (
@@ -24,15 +25,7 @@ export default function Footer() {
       <Divider />
       <FooterItems />
       <Divider />
-      <Box
-        sx={{
-          paddingBlock: 7,
-          paddingInline: "calc(9% - 1rem)",
-        }}
-      >
-        <Box>Copyright © 2024 Black Apple Store. Powered by BlackApple.</Box>
-        <Box></Box>
-      </Box>
+      <FooterSocialLinks />
     </Box>
   );
 }

@@ -1,9 +1,29 @@
-import { Typography } from "@mui/material";
+import Link from "@mui/material/Link";
 import Box from "@mui/material/Box";
 import logo from "../../../assets/black-logo.png";
 import Logo from "../../Header/Header-Components/Logo";
 import FooterForm from "./FooterForm";
 import FooterLinks from "./FooterLinks";
+import { NavLink } from "react-router-dom";
+import { createTheme } from "@mui/material";
+import { ThemeProvider } from "@emotion/react";
+
+const theme = createTheme({
+  components: {
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          display: "block",
+          textDecoration: "none",
+          color: "grey",
+          "&:hover": {
+            color: "black",
+          },
+        },
+      },
+    },
+  },
+});
 
 const FooterItems = () => {
   return (
@@ -34,25 +54,46 @@ const FooterItems = () => {
             </Box>
             <Box>The best look anytime, anywhere.</Box>
           </Box>
-
-          <FooterLinks title="For Her">
-            <>
-              <Typography>Women Jeans</Typography>
-              <Typography>Tops and Shirts</Typography>
-              <Typography>Women Jackets</Typography>
-              <Typography>Heels and Flats</Typography>
-              <Typography>Women Accessories</Typography>
-            </>
-          </FooterLinks>
-          <FooterLinks title="For Him">
-            <>
-              <Typography>Men Jeans</Typography>
-              <Typography>Men Shirts</Typography>
-              <Typography>Men Jackets</Typography>
-              <Typography>Men Shoes</Typography>
-              <Typography>Men Accessories</Typography>
-            </>
-          </FooterLinks>
+          <ThemeProvider theme={theme}>
+            <FooterLinks title="For Her">
+              <>
+                <Link to="/" component={NavLink}>
+                  Women Jeans
+                </Link>
+                <Link to="/" component={NavLink}>
+                  Tops and Shirts
+                </Link>
+                <Link to="/" component={NavLink}>
+                  Women Jackets
+                </Link>
+                <Link to="/" component={NavLink}>
+                  Heels and Flats
+                </Link>
+                <Link to="/" component={NavLink}>
+                  Women Accessories
+                </Link>
+              </>
+            </FooterLinks>
+            <FooterLinks title="For Him">
+              <>
+                <Link to="/" component={NavLink}>
+                  Men Jeans
+                </Link>
+                <Link to="/" component={NavLink}>
+                  Men Shirts
+                </Link>
+                <Link to="/" component={NavLink}>
+                  Men Jackets
+                </Link>
+                <Link to="/" component={NavLink}>
+                  Men Shoes
+                </Link>
+                <Link to="/" component={NavLink}>
+                  Men Accessories
+                </Link>
+              </>
+            </FooterLinks>{" "}
+          </ThemeProvider>
           <FooterForm />
         </Box>
       </Box>
