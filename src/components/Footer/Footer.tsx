@@ -39,7 +39,7 @@ export default function Footer() {
             },
           }}
         >
-          <Box>
+          <Box sx={{ marginBottom: { xs: 2 } }}>
             <Box
               sx={{
                 paddingBottom: 3,
@@ -49,12 +49,12 @@ export default function Footer() {
             </Box>
             <Box>The best look anytime, anywhere.</Box>
           </Box>
-          <Box>
+          <Box sx={{ marginBottom: { xs: 2 } }}>
             <Typography
               component="h4"
               variant="h1"
-              marginBottom={2}
               fontSize={18}
+              sx={{ marginBottom: { xs: 0, sm: 2 } }}
             >
               For Her
             </Typography>
@@ -64,11 +64,11 @@ export default function Footer() {
             <Typography>Heels and Flats</Typography>
             <Typography>Women Accessories</Typography>
           </Box>
-          <Box>
+          <Box sx={{ marginBottom: { xs: 2 } }}>
             <Typography
               component="h4"
               variant="h1"
-              marginBottom={2}
+              sx={{ marginBottom: { xs: 0, sm: 2 } }}
               fontSize={18}
             >
               For Him
