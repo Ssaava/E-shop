@@ -1,4 +1,4 @@
-import { Divider, Typography } from "@mui/material";
+import { Button, Divider, TextField, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import Logo from "../Header/Header-Components/Logo";
 import logo from "../../assets/black-logo.png";
@@ -14,7 +14,7 @@ export default function Footer() {
 
       <Box
         sx={{
-          paddingBlock: 10,
+          paddingBlock: 7,
           paddingInline: "calc(9% - 1rem)",
         }}
       >
@@ -25,7 +25,7 @@ export default function Footer() {
       <Divider />
       <Box
         sx={{
-          paddingBlock: 10,
+          paddingBlock: 7,
           paddingInline: "calc(9% - 1rem)",
         }}
       >
@@ -33,7 +33,7 @@ export default function Footer() {
           sx={{
             display: "grid",
             gridTemplateColumns: {
-              md: "repeat(4, 1fr)",
+              md: "1.5fr repeat(3, 1fr)",
               sm: "2fr repeat(3, 1fr)",
               xs: "1fr",
             },
@@ -42,22 +42,80 @@ export default function Footer() {
           <Box>
             <Box
               sx={{
-                paddingBlock: 5,
+                paddingBottom: 3,
               }}
             >
               <Logo src={logo} />
             </Box>
             <Box>The best look anytime, anywhere.</Box>
           </Box>
-          <Box>xs=4</Box>
-          <Box>xs=4</Box>
-          <Box>xs=8</Box>
+          <Box>
+            <Typography
+              component="h4"
+              variant="h1"
+              marginBottom={2}
+              fontSize={18}
+            >
+              For Her
+            </Typography>
+            <Typography>Women Jeans</Typography>
+            <Typography>Tops and Shirts</Typography>
+            <Typography>Women Jackets</Typography>
+            <Typography>Heels and Flats</Typography>
+            <Typography>Women Accessories</Typography>
+          </Box>
+          <Box>
+            <Typography
+              component="h4"
+              variant="h1"
+              marginBottom={2}
+              fontSize={18}
+            >
+              For Him
+            </Typography>
+            <Typography>Men Jeans</Typography>
+            <Typography>Men Shirts</Typography>
+            <Typography>Men Jackets</Typography>
+            <Typography>Men Shoes</Typography>
+            <Typography>Men Accessories</Typography>
+          </Box>
+          <Box>
+            <Typography
+              component="h4"
+              variant="h1"
+              marginBottom={2}
+              fontSize={18}
+            >
+              SubScribe
+            </Typography>
+            <Typography>
+              <Box component="form" noValidate autoComplete="off">
+                <TextField
+                  id="outlined-basic"
+                  label="your email address..."
+                  variant="outlined"
+                  sx={{ borderRadius: "unset", marginBottom: 2 }}
+                />
+                <Button
+                  color={"primary"}
+                  variant="contained"
+                  sx={{
+                    color: "black",
+                    borderRadius: "unset",
+                    boxShadow: "unset",
+                  }}
+                >
+                  SubScribe
+                </Button>
+              </Box>
+            </Typography>
+          </Box>
         </Box>
       </Box>
       <Divider />
       <Box
         sx={{
-          paddingBlock: 10,
+          paddingBlock: 7,
           paddingInline: "calc(9% - 1rem)",
         }}
       >
