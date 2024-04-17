@@ -1,6 +1,8 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header/Header";
+
 import { CssBaseline } from "@mui/material";
+import Footer from "../components/Footer/Footer";
 
 const MainLayOut = () => {
   return (
@@ -8,6 +10,7 @@ const MainLayOut = () => {
       <CssBaseline />
       <Header />
       <Outlet />
+      <Footer />
     </>
   );
 };

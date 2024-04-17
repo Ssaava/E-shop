@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../../../assets/logo.png";
 
 import { Link, Typography } from "@mui/material";
 
-export const Logo = () => {
+export const Logo = ({ src }: { src: string }) => {
   const [screenWidth, setScreenWidth] = useState({ width: window.innerWidth });
 
   useEffect(() => {
@@ -38,7 +37,7 @@ export const Logo = () => {
       >
         <Typography
           component="img"
-          src={logo}
+          src={src}
           sx={{ width: 65, objectFit: "cover", marginRight: 2 }}
         />
       </Link>

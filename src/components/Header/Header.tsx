@@ -23,6 +23,7 @@ import Logo from "./Header-Components/Logo";
 import ShoppingCart from "./Header-Components/ShoppingCart";
 import Avatar from "@mui/material/Avatar";
 import PagesLinks from "./Header-Components/PagesLinks";
+import logo from "../../assets/logo.png";
 
 const pages = ["Everything", "Women", "Men", "Accessories"];
 type SettingsTypes = {
@@ -100,7 +101,7 @@ function Header() {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters id="back-to-top-anchor">
-          <Logo />
+          <Logo src={logo} />
 
           <PagesLinks pages={pages} />
 
