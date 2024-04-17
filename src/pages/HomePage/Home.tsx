@@ -26,8 +26,6 @@ const Home = () => {
           background: "white",
           paddingBlock: "4rem",
           paddingInline: "calc(9% - 1rem)",
-          height: "auto",
-          minHeight: "100vh",
         }}
       >
         <Box>

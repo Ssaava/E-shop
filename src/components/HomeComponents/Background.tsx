@@ -1,7 +1,18 @@
 import Box from "@mui/material/Box/Box";
 import dress from "../../assets/shoes.png";
 import Typography from "@mui/material/Typography";
+import { useState } from "react";
 const Background = () => {
+  const [displayValue, setDisplayValue] = useState<string>("grid");
+  window.addEventListener("scroll", () => {
+    const { scrollTop } = document.documentElement;
+
+    if (scrollTop <= 750) {
+      setDisplayValue("grid");
+    } else {
+      setDisplayValue("none");
+    }
+  });
   return (
     <>
       <Box
@@ -14,19 +25,27 @@ const Background = () => {
           left: 0,
           zIndex: -1,
           margin: 0,
-          display: "grid",
+          display: { md: displayValue },
           gridTemplateColumns: { md: "1fr 1fr" },
         }}
       >
-        <Box></Box>
-        <Box>
+        <Box
+          sx={{
+            display: { sm: "none", xs: "none", md: "block" },
+          }}
+        ></Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "flex-end",
+          }}
+        >
           <Typography
             component="img"
             src={dress}
             sx={{
-              width: "clamp(29.6875rem, 19.8539rem + 37.9126vw, 56.25rem)",
-              display: "block",
-              marginInline: "auto",
+              width: "100%",
+              margin: "auto 0",
             }}
           />
         </Box>
