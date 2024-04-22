@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Background from "../../components/HomeComponents/Background";
 import HeroSection from "../../components/HomeComponents/HeroSection";
 import ProductCard from "../../components/HomeComponents/ProductCard";
+
 const Home = () => {
   return (
     <>
