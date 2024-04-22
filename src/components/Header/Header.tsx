@@ -1,10 +1,10 @@
-import Logout from "@mui/icons-material/Logout";
+import CallIcon from "@mui/icons-material/Call";
+import InfoIconOutlined from "@mui/icons-material/InfoOutlined";
+import MenuIcon from "@mui/icons-material/Menu";
 import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
-import InfoIconOutlined from "@mui/icons-material/InfoOutlined";
-import CallIcon from "@mui/icons-material/Call";
-import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
+import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Drawer from "@mui/material/Drawer";
@@ -15,15 +15,15 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
-import { MouseEvent, useState } from "react";
+import { Dispatch, MouseEvent, SetStateAction, useState } from "react";
 import { NavLink } from "react-router-dom";
+import logo from "../../assets/logo.png";
 import ScrollTop from "../scroll/ScrollTop";
 import Categories from "./Header-Components/Categories";
 import Logo from "./Header-Components/Logo";
-import ShoppingCart from "./Header-Components/ShoppingCart";
-import Avatar from "@mui/material/Avatar";
+import OptionsButton from "./Header-Components/OptionsButton";
 import PagesLinks from "./Header-Components/PagesLinks";
-import logo from "../../assets/logo.png";
+import ShoppingCart from "./Header-Components/ShoppingCart";
 
 const pages = ["Everything", "Women", "Men", "Accessories"];
 type SettingsTypes = {
@@ -37,17 +37,12 @@ const settings: SettingsTypes[] = [
     link: "user-profile",
     icon: <PersonAdd fontSize="small" />,
   },
-  {
-    title: "Account",
-    link: "user-account",
-    icon: <PersonAdd fontSize="small" />,
-  },
+
   {
     title: "Settings",
     link: "user-settings",
     icon: <Settings fontSize="small" />,
   },
-  { title: "Logout", link: "log-out", icon: <Logout fontSize="small" /> },
 ];
 
 type CompanyInfo = {
@@ -71,7 +66,11 @@ const companyInfo: CompanyInfo[] = [
   },
 ];
 
-function Header() {
+type Props = {
+  isLoggingIn: boolean;
+  setIsLoggingIn: Dispatch<SetStateAction<boolean>>;
+};
+function Header({ isLoggingIn, setIsLoggingIn }: Props) {
   const [toggleDrawer, setToggleDrawer] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
@@ -89,6 +88,10 @@ function Header() {
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+  const handleSignIn = () => {
+    setAnchorEl(null);
+    setIsLoggingIn(true);
   };
   return (
     <AppBar
@@ -127,6 +130,9 @@ function Header() {
           <ShoppingCart content="1" />
           <Tooltip title="Profile">
             <IconButton
+              aria-controls={open ? "profile menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
               sx={{ p: 0, display: { xs: "none", md: "flex" } }}
               onClick={handleClick}
             >
@@ -138,43 +144,29 @@ function Header() {
             id="account-menu"
             open={open}
             onClose={handleClose}
-            onClick={handleClose}
-            PaperProps={{
-              elevation: 0,
-              sx: {
-                overflow: "visible",
-                filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-                mt: 1.5,
-                "& .MuiAvatar-root": {
-                  width: 32,
-                  height: 32,
-                  ml: -0.5,
-                  mr: 1,
-                },
-                "&::before": {
-                  content: '""',
-                  display: "block",
-                  position: "absolute",
-                  top: 0,
-                  right: 14,
-                  width: 10,
-                  height: 10,
-                  transform: "translateY(-50%) rotate(45deg)",
-                  zIndex: 0,
-                },
-              },
+            sx={{
+              maxWidth: "300px",
+              width: "100%",
             }}
-            transformOrigin={{ horizontal: "right", vertical: "top" }}
-            anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
           >
+            {!isLoggingIn && (
+              <OptionsButton handleSignIn={handleSignIn} toLink={"/sign-in"}>
+                Sign In
+              </OptionsButton>
+            )}
             {settings.map((setting) => (
               <Link
                 component={NavLink}
                 to={`${setting.link}`}
                 key={setting.title}
-                sx={{ textDecoration: "none", color: "grey" }}
+                onClick={handleClose}
+                sx={{
+                  textDecoration: "none",
+                  color: "grey",
+                  "&:hover": { color: "black" },
+                }}
               >
-                <MenuItem onClick={handleClose}>
+                <MenuItem>
                   <ListItemIcon>{setting.icon}</ListItemIcon>
                   {setting.title}
                 </MenuItem>
