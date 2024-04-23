@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useResolvedPath } from "react-router-dom";
 import Header from "../components/Header/Header";
 
 import { CssBaseline } from "@mui/material";
@@ -11,8 +11,9 @@ type ContextType = {
   setIsLoggingIn: Dispatch<SetStateAction<boolean>>;
 };
 const MainLayOut = () => {
-  const [isLoggingIn, setIsLoggingIn] = useState<boolean>(false);
-
+  const value = (localStorage.getItem("true") && true) || false;
+  const [isLoggingIn, setIsLoggingIn] = useState<boolean>(value);
+  console.log(useResolvedPath("sign-in"));
   return (
     <>
       <CssBaseline />

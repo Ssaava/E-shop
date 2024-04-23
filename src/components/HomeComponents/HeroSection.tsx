@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box/Box";
-import Button from "@mui/material/Button/Button";
 import Typography from "@mui/material/Typography/Typography";
+import LinkButton from "../Header/Header-Components/LinkButton";
 
 const HeroSection = () => {
   return (
@@ -33,32 +33,34 @@ const HeroSection = () => {
             25% Off On All Products
           </Typography>
           <Box>
-            <Button
-              color={"primary"}
-              variant="contained"
-              sx={{
+            <LinkButton
+              toLink="/"
+              buttonStyling={{
                 backgroundColor: "white",
                 color: "black",
                 borderRadius: "unset",
                 fontSize: 20,
                 marginRight: 2,
                 boxShadow: "unset",
+                "&:hover": { background: "blue", color: "white" },
               }}
             >
-              SHOP NOW
-            </Button>
-            <Button
-              variant="outlined"
-              sx={{
+              SHOP Now
+            </LinkButton>
+
+            <LinkButton
+              toLink="/"
+              buttonStyling={{
                 borderRadius: "unset",
                 fontSize: 20,
                 boxShadow: "unset",
                 border: "1px solid white",
                 color: "white",
+                "&:hover": { borderColor: "blue" },
               }}
             >
               Find More
-            </Button>
+            </LinkButton>
           </Box>
         </Box>
       </Box>
