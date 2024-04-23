@@ -1,4 +1,4 @@
-import { Button, Link, MenuItem } from "@mui/material";
+import { Button, Link } from "@mui/material";
 import { NavLink } from "react-router-dom";
 
 type Props = {
@@ -24,11 +24,13 @@ const LinkButton = ({
         onClick={handleSignIn}
         sx={linkStyling}
       >
-        <MenuItem>
-          <Button variant="contained" sx={buttonStyling}>
-            {children}
-          </Button>
-        </MenuItem>
+        <Button
+          sx={{
+            ...buttonStyling,
+          }}
+        >
+          {children}
+        </Button>
       </Link>
     </>
   );

@@ -20,8 +20,8 @@ import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import ScrollTop from "../scroll/ScrollTop";
 import Categories from "./Header-Components/Categories";
-import Logo from "./Header-Components/Logo";
 import LinkButton from "./Header-Components/LinkButton";
+import Logo from "./Header-Components/Logo";
 import PagesLinks from "./Header-Components/PagesLinks";
 import ShoppingCart from "./Header-Components/ShoppingCart";
 
@@ -151,40 +151,45 @@ function Header({ isLoggingIn, setIsLoggingIn }: Props) {
             }}
           >
             {!isLoggingIn && (
-              <LinkButton
-                handleSignIn={handleSignIn}
-                toLink={"/sign-in"}
-                linkStyling={{
-                  textDecoration: "none",
-                  color: "grey",
-                  "&:hover": { color: "black" },
-                }}
-                buttonStyling={{
-                  maxWidth: "200px",
-                  width: "100%",
-                  marginInline: "auto",
-                }}
-              >
-                Sign In
-              </LinkButton>
+              <MenuItem>
+                <LinkButton
+                  handleSignIn={handleSignIn}
+                  toLink={"/sign-in"}
+                  linkStyling={{
+                    textDecoration: "none",
+                    marginInline: "auto",
+                    maxWidth: "200px",
+                    width: "100%",
+                    background: "transparent",
+                  }}
+                  buttonStyling={{
+                    color: "white",
+                    width: "100%",
+                    backgroundColor: "blue",
+                    "&:hover": { background: "blue", color: "white" },
+                  }}
+                >
+                  Sign In
+                </LinkButton>
+              </MenuItem>
             )}
             {settings.map((setting) => (
-              <Link
-                component={NavLink}
-                to={`${setting.link}`}
-                key={setting.title}
-                onClick={handleClose}
-                sx={{
-                  textDecoration: "none",
-                  color: "grey",
-                  "&:hover": { color: "black" },
-                }}
-              >
-                <MenuItem>
+              <MenuItem>
+                <Link
+                  component={NavLink}
+                  to={`${setting.link}`}
+                  key={setting.title}
+                  onClick={handleClose}
+                  sx={{
+                    textDecoration: "none",
+                    color: "grey",
+                    "&:hover": { color: "black" },
+                  }}
+                >
                   <ListItemIcon>{setting.icon}</ListItemIcon>
                   {setting.title}
-                </MenuItem>
-              </Link>
+                </Link>{" "}
+              </MenuItem>
             ))}
           </Menu>
 
