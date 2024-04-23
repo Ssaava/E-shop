@@ -21,7 +21,7 @@ import logo from "../../assets/logo.png";
 import ScrollTop from "../scroll/ScrollTop";
 import Categories from "./Header-Components/Categories";
 import Logo from "./Header-Components/Logo";
-import OptionsButton from "./Header-Components/OptionsButton";
+import LinkButton from "./Header-Components/LinkButton";
 import PagesLinks from "./Header-Components/PagesLinks";
 import ShoppingCart from "./Header-Components/ShoppingCart";
 
@@ -92,6 +92,7 @@ function Header({ isLoggingIn, setIsLoggingIn }: Props) {
   const handleSignIn = () => {
     setAnchorEl(null);
     setIsLoggingIn(true);
+    localStorage.setItem("true", "true");
   };
   return (
     <AppBar
@@ -150,9 +151,22 @@ function Header({ isLoggingIn, setIsLoggingIn }: Props) {
             }}
           >
             {!isLoggingIn && (
-              <OptionsButton handleSignIn={handleSignIn} toLink={"/sign-in"}>
+              <LinkButton
+                handleSignIn={handleSignIn}
+                toLink={"/sign-in"}
+                linkStyling={{
+                  textDecoration: "none",
+                  color: "grey",
+                  "&:hover": { color: "black" },
+                }}
+                buttonStyling={{
+                  maxWidth: "200px",
+                  width: "100%",
+                  marginInline: "auto",
+                }}
+              >
                 Sign In
-              </OptionsButton>
+              </LinkButton>
             )}
             {settings.map((setting) => (
               <Link
