@@ -1,5 +1,5 @@
 import Box from "@mui/material/Box/Box";
-import dress from "../../assets/shoes.png";
+import shoe from "../../assets/shoes.png";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
 const Background = () => {
@@ -42,7 +42,7 @@ const Background = () => {
         >
           <Typography
             component="img"
-            src={dress}
+            src={shoe}
             sx={{
               width: "100%",
               margin: "auto 0",
