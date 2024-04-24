@@ -1,8 +1,10 @@
 import Box from "@mui/material/Box/Box";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
-type Props = { bgImg: string };
-const Background = ({ bgImg }: Props) => {
+type Props = { bgImg?: string; sx?: object };
+
+// takes the sx prameter and it is a grid container, u need to specify the grid template comumns
+const Background = ({ bgImg, sx }: Props) => {
   const [displayValue, setDisplayValue] = useState<string>("grid");
   window.addEventListener("scroll", () => {
     const { scrollTop } = document.documentElement;
@@ -17,6 +19,8 @@ const Background = ({ bgImg }: Props) => {
     <>
       <Box
         sx={{
+          ...sx,
+          display: { md: displayValue },
           backgroundColor: "#166894",
           width: "100vw",
           height: "100vh",
@@ -25,8 +29,6 @@ const Background = ({ bgImg }: Props) => {
           left: 0,
           zIndex: -1,
           margin: 0,
-          display: { md: displayValue },
-          gridTemplateColumns: { md: "1fr 1fr" },
         }}
       >
         <Box
@@ -34,21 +36,26 @@ const Background = ({ bgImg }: Props) => {
             display: { sm: "none", xs: "none", md: "block" },
           }}
         ></Box>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "flex-end",
-          }}
-        >
-          <Typography
-            component="img"
-            src={bgImg}
+        {bgImg && (
+          <Box
             sx={{
-              width: "100%",
-              margin: "auto 0",
+              display: "flex",
+              justifyContent: "flex-end",
+              backgroundColor: "red",
             }}
-          />
-        </Box>
+          >
+            (
+            <Typography
+              component="img"
+              src={bgImg}
+              sx={{
+                width: "100%",
+                margin: "auto 0",
+              }}
+            />
+            )
+          </Box>
+        )}
       </Box>
     </>
   );

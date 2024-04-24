@@ -19,7 +19,12 @@ const Home = () => {
           // height: "max(50vw, 100vh - 117.317px)",
         }}
       >
-        <Background bgImg={shoe} />
+        <Background
+          sx={{
+            gridTemplateColumns: { md: "1fr 1fr" },
+          }}
+          bgImg={shoe}
+        />
         <HeroSection />
         {/* items section */}
       </Box>
