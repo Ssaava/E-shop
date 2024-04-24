@@ -1,5 +1,11 @@
+import Background from "../../components/HomeComponents/Background";
+
 const Contact = () => {
-  return <div>Contact</div>;
+  return (
+    <>
+      <Background />
+    </>
+  );
 };
 
 export default Contact;

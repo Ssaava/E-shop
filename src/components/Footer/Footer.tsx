@@ -8,6 +8,9 @@ export default function Footer() {
     <Box
       sx={{
         background: "#fff",
+        width: "100%",
+        position: "absolute",
+        bottom: 0,
       }}
     >
       <Divider />
