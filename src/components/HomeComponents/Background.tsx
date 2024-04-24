@@ -1,8 +1,8 @@
 import Box from "@mui/material/Box/Box";
-import shoe from "../../assets/shoes.png";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
-const Background = () => {
+type Props = { bgImg: string };
+const Background = ({ bgImg }: Props) => {
   const [displayValue, setDisplayValue] = useState<string>("grid");
   window.addEventListener("scroll", () => {
     const { scrollTop } = document.documentElement;
@@ -42,7 +42,7 @@ const Background = () => {
         >
           <Typography
             component="img"
-            src={shoe}
+            src={bgImg}
             sx={{
               width: "100%",
               margin: "auto 0",

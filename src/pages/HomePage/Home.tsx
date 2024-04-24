@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Background from "../../components/HomeComponents/Background";
 import HeroSection from "../../components/HomeComponents/HeroSection";
 import ProductCard from "../../components/HomeComponents/ProductCard";
+import shoe from "../../assets/shoes.png";
 
 const Home = () => {
   return (
@@ -18,7 +19,7 @@ const Home = () => {
           // height: "max(50vw, 100vh - 117.317px)",
         }}
       >
-        <Background />
+        <Background bgImg={shoe} />
         <HeroSection />
         {/* items section */}
       </Box>
