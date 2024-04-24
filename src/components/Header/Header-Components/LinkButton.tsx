@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 type Props = {
   children: JSX.Element | string;
-  handleSignIn?: () => void;
+  handleClose?: () => void;
   toLink: string;
   linkStyling?: object;
   buttonStyling?: object;
@@ -11,7 +11,7 @@ type Props = {
 
 const LinkButton = ({
   children,
-  handleSignIn,
+  handleClose,
   toLink,
   linkStyling,
   buttonStyling,
@@ -21,7 +21,7 @@ const LinkButton = ({
       <Link
         component={NavLink}
         to={toLink}
-        onClick={handleSignIn}
+        onClick={handleClose}
         sx={linkStyling}
       >
         <Button

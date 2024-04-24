@@ -15,7 +15,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
-import { Dispatch, MouseEvent, SetStateAction, useState } from "react";
+import { MouseEvent, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import ScrollTop from "../scroll/ScrollTop";
@@ -66,11 +66,7 @@ const companyInfo: CompanyInfo[] = [
   },
 ];
 
-type Props = {
-  isLoggingIn: boolean;
-  setIsLoggingIn: Dispatch<SetStateAction<boolean>>;
-};
-function Header({ isLoggingIn, setIsLoggingIn }: Props) {
+function Header() {
   const [toggleDrawer, setToggleDrawer] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
@@ -89,11 +85,7 @@ function Header({ isLoggingIn, setIsLoggingIn }: Props) {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const handleSignIn = () => {
-    setAnchorEl(null);
-    setIsLoggingIn(true);
-    localStorage.setItem("true", "true");
-  };
+
   return (
     <AppBar
       position="static"
@@ -150,11 +142,11 @@ function Header({ isLoggingIn, setIsLoggingIn }: Props) {
               width: "100%",
             }}
           >
-            {!isLoggingIn && (
+            {
               <MenuItem>
                 <LinkButton
-                  handleSignIn={handleSignIn}
                   toLink={"/sign-in"}
+                  handleClose={handleClose}
                   linkStyling={{
                     textDecoration: "none",
                     marginInline: "auto",
@@ -172,7 +164,7 @@ function Header({ isLoggingIn, setIsLoggingIn }: Props) {
                   Sign In
                 </LinkButton>
               </MenuItem>
-            )}
+            }
             {settings.map((setting) => (
               <MenuItem>
                 <Link

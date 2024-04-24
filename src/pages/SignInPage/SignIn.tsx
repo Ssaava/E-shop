@@ -1,7 +1,9 @@
-import { Container, Box, Typography, TextField } from "@mui/material";
+import { Box, Container, Link, Typography } from "@mui/material";
+import { NavLink } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
 import blackIcon from "../../assets/black-logo.png";
 import LinkButton from "../../components/Header/Header-Components/LinkButton";
+import TextInput from "../../components/TextFields/TextInput";
 const SignIn = () => {
   return (
     <Fragment>
@@ -35,22 +37,16 @@ const SignIn = () => {
           </Box>
           <Box>
             <Typography textAlign={"center"} marginBottom={2}>
-              Type your e-mail or phone number to log in or create a{" "}
+              Type your e-mail or phone number to log into your{" "}
               <Typography component="span" fontWeight={"bold"}>
                 BAS
               </Typography>{" "}
               account.
             </Typography>
           </Box>
-          <Box>
-            <TextField
-              id="outlined-basic"
-              label="Email or Mobile Number*"
-              variant="outlined"
-              fullWidth
-              sx={{ marginBlock: 2 }}
-            />
-          </Box>
+
+          <TextInput label="Email or Mobile Number*" />
+          <TextInput label="Password*" />
           <Box>
             <LinkButton
               toLink="/"
@@ -66,6 +62,15 @@ const SignIn = () => {
             >
               Continue
             </LinkButton>
+          </Box>
+
+          <Box>
+            <Typography>
+              Do not have account yet?{" "}
+              <Link to="/sign-up" component={NavLink}>
+                Sign-Up
+              </Link>
+            </Typography>
           </Box>
         </Box>
       </Container>

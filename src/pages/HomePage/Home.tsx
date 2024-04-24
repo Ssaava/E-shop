@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Background from "../../components/HomeComponents/Background";
 import HeroSection from "../../components/HomeComponents/HeroSection";
 import ProductCard from "../../components/HomeComponents/ProductCard";
+import shoe from "../../assets/shoes.png";
 
 const Home = () => {
   return (
@@ -18,7 +19,13 @@ const Home = () => {
           // height: "max(50vw, 100vh - 117.317px)",
         }}
       >
-        <Background />
+        <Background
+          sx={{
+            backgroundColor: "#166894",
+            gridTemplateColumns: { md: "1fr 1fr" },
+          }}
+          bgImg={shoe}
+        />
         <HeroSection />
         {/* items section */}
       </Box>
@@ -34,8 +41,18 @@ const Home = () => {
             sx={{
               textAlign: "center",
               paddingBlock: "clamp(1rem, 8vw - 6rem, 2rem)",
-              borderBottom: "2px solid blue",
+              position: "relative",
               fontSize: "clamp(2rem, -1.6875rem + 8vw, 3rem)",
+              "&:after": {
+                content: `" "`,
+                position: "absolute",
+                bottom: "0",
+                width: "clamp(5rem, 4.3451rem + 5.2395vw, 9.375rem)",
+                height: "2px",
+                left: "50%",
+                transform: "translateX(-50%)",
+                backgroundColor: "blue",
+              },
             }}
           >
             Featured Products

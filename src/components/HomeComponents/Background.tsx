@@ -1,8 +1,10 @@
 import Box from "@mui/material/Box/Box";
-import dress from "../../assets/shoes.png";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
-const Background = () => {
+type Props = { bgImg?: string; sx?: object; imgStyles?: object };
+
+// takes the sx prameter and it is a grid container, u need to specify the grid template comumns
+const Background = ({ bgImg, sx, imgStyles }: Props) => {
   const [displayValue, setDisplayValue] = useState<string>("grid");
   window.addEventListener("scroll", () => {
     const { scrollTop } = document.documentElement;
@@ -17,7 +19,8 @@ const Background = () => {
     <>
       <Box
         sx={{
-          backgroundColor: "#166894",
+          ...sx,
+          display: { md: displayValue },
           width: "100vw",
           height: "100vh",
           position: { xs: "absolute", md: "fixed" },
@@ -25,8 +28,6 @@ const Background = () => {
           left: 0,
           zIndex: -1,
           margin: 0,
-          display: { md: displayValue },
-          gridTemplateColumns: { md: "1fr 1fr" },
         }}
       >
         <Box
@@ -34,21 +35,26 @@ const Background = () => {
             display: { sm: "none", xs: "none", md: "block" },
           }}
         ></Box>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "flex-end",
-          }}
-        >
-          <Typography
-            component="img"
-            src={dress}
+        {bgImg && (
+          <Box
             sx={{
-              width: "100%",
-              margin: "auto 0",
+              display: "flex",
+              justifyContent: "flex-end",
             }}
-          />
-        </Box>
+          >
+            (
+            <Typography
+              component="img"
+              src={bgImg}
+              sx={{
+                width: "100%",
+                margin: "auto 0",
+                ...imgStyles,
+              }}
+            />
+            )
+          </Box>
+        )}
       </Box>
     </>
   );
