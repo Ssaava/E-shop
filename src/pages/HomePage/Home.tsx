@@ -21,6 +21,7 @@ const Home = () => {
       >
         <Background
           sx={{
+            backgroundColor: "#166894",
             gridTemplateColumns: { md: "1fr 1fr" },
           }}
           bgImg={shoe}
