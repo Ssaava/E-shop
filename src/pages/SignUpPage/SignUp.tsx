@@ -1,8 +1,10 @@
-import { Container, Box, Typography, TextField } from "@mui/material";
+import { Box, Container, Link, Typography } from "@mui/material";
+import { NavLink } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
 import blackIcon from "../../assets/black-logo.png";
 import LinkButton from "../../components/Header/Header-Components/LinkButton";
-const SignIn = () => {
+import TextInput from "../../components/TextFields/TextInput";
+const SignUp = () => {
   return (
     <Fragment>
       <Container maxWidth="sm">
@@ -35,22 +37,18 @@ const SignIn = () => {
           </Box>
           <Box>
             <Typography textAlign={"center"} marginBottom={2}>
-              Type your e-mail or phone number to log in or create a{" "}
+              Type your e-mail or phone number to create a{" "}
               <Typography component="span" fontWeight={"bold"}>
                 BAS
               </Typography>{" "}
               account.
             </Typography>
           </Box>
-          <Box>
-            <TextField
-              id="outlined-basic"
-              label="Email or Mobile Number*"
-              variant="outlined"
-              fullWidth
-              sx={{ marginBlock: 2 }}
-            />
-          </Box>
+          <TextInput label="Email*" />
+          <TextInput label="Mobile Number*" />
+          <TextInput label="Password*" />
+          <TextInput label="Repeat Password*" />
+
           <Box>
             <LinkButton
               toLink="/"
@@ -64,8 +62,17 @@ const SignIn = () => {
                 "&:hover": { background: "blue", color: "white" },
               }}
             >
-              Continue
+              Create Account
             </LinkButton>
+          </Box>
+
+          <Box>
+            <Typography>
+              Do have account?{" "}
+              <Link to="/sign-in" component={NavLink}>
+                Sign-In
+              </Link>
+            </Typography>
           </Box>
         </Box>
       </Container>
@@ -73,4 +80,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;
