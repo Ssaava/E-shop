@@ -37,7 +37,7 @@ const SignUp = () => {
           </Box>
           <Box>
             <Typography textAlign={"center"} marginBottom={2}>
-              Type your e-mail or phone number to create a{" "}
+              Create a{" "}
               <Typography component="span" fontWeight={"bold"}>
                 BAS
               </Typography>{" "}
