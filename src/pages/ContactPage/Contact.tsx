@@ -30,7 +30,7 @@ const Contact = () => {
             Contact Us
           </Typography>
         </Box>
-        <Box sx={{ background: "white", paddingBlock: "5rem" }}>
+        <Box sx={{ background: "rgb(245, 247, 249)", paddingBlock: "5rem" }}>
           <Box sx={{ paddingBottom: "4rem" }}>
             <Typography
               sx={{
@@ -91,7 +91,7 @@ const Contact = () => {
               </Typography>
             </Box>
 
-            <Box sx={{ backgroundColor: "rgba(0,0,0,0.1)", height: "50px" }}>
+            <Box sx={{ backgroundColor: "", height: "50px" }}>
               <Box></Box>
             </Box>
           </Box>

@@ -31,7 +31,7 @@ const Home = () => {
       </Box>
       <Box
         sx={{
-          background: "white",
+          background: "rgb(245, 247, 249)",
           paddingBlock: "4rem",
           paddingInline: "calc(9% - 1rem)",
         }}
