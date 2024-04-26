@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <Box
       sx={{
-        background: "#fff",
+        background: "rgb(245, 247, 249)",
         // width: "100%",
         // position: "sticky",
         // bottom: 0,
