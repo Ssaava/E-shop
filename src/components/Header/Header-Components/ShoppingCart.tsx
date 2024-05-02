@@ -1,17 +1,19 @@
-import { useState, MouseEvent } from "react";
+import { MouseEvent, useState } from "react";
 import "./ShoppingCart.css";
 
 import { ShoppingCartOutlined } from "@mui/icons-material";
+import { Divider } from "@mui/material";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Tooltip from "@mui/material/Tooltip";
-import IconButton from "@mui/material/IconButton";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
 import DrawerList from "./DrawerList";
+import LinkButton from "./LinkButton";
 
 const theme = createTheme({
   components: {
@@ -24,16 +26,23 @@ const theme = createTheme({
         },
       },
     },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          width: "300px",
+          // minWidth: "100%",
+        },
+      },
+    },
   },
 });
-const cartItems = ["Item 1"];
 type Props = {
   content: string | number;
 };
 const ShoppingCart = ({ content }: Props) => {
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
   const [toggleDrawerOpen, setToggleDrawerOpen] = useState<boolean>(false);
-  const [cartItemsTotal, setCartItems] = useState<number>(cartItems.length);
+  const [cartItems, setCartItems] = useState<object>({});
 
   console.log(anchorElUser);
   const handleOpenUserMenu = (event: MouseEvent<HTMLElement>) => {
@@ -42,7 +51,7 @@ const ShoppingCart = ({ content }: Props) => {
 
   const handleCloseDrawer = () => {
     setToggleDrawerOpen(false);
-    setCartItems(1);
+    setCartItems({});
   };
   return (
     <>
@@ -108,12 +117,40 @@ const ShoppingCart = ({ content }: Props) => {
             onClose={() => handleCloseDrawer()}
             anchor="right"
           >
-            {cartItemsTotal != 0 ? (
-              <DrawerList />
+            <Typography sx={{ padding: "1.2rem" }}>Shopping Cart</Typography>
+            <Divider />
+            {cartItems ? (
+              <DrawerList handleClose={() => handleCloseDrawer()} />
             ) : (
-              <ListItemButton onClick={() => handleCloseDrawer()}>
-                <ListItem>No Items in the shopping cart</ListItem>
-              </ListItemButton>
+              <>
+                <ListItemButton>
+                  <ListItem
+                    sx={{
+                      width: "fit-content",
+                      marginInline: "auto",
+                    }}
+                  >
+                    No Products in the Cart
+                  </ListItem>
+                </ListItemButton>
+                <Box sx={{ padding: "1.2rem" }}>
+                  <LinkButton
+                    toLink="/"
+                    handleClose={() => handleCloseDrawer()}
+                    buttonStyling={{
+                      background: "blue",
+                      "&:hover": {
+                        background: "blue",
+                      },
+                      width: "100%",
+                      paddingBlock: "1rem",
+                      color: "white",
+                    }}
+                  >
+                    Continue Shopping
+                  </LinkButton>
+                </Box>
+              </>
             )}
           </Drawer>
         </Box>
