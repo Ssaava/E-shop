@@ -22,7 +22,7 @@ const LinkButton = ({
         component={NavLink}
         to={toLink}
         onClick={handleClose}
-        sx={linkStyling}
+        sx={{ ...linkStyling }}
       >
         <Button
           sx={{

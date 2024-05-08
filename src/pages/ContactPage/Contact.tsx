@@ -8,7 +8,7 @@ import Box from "@mui/material/Box";
 import { useState } from "react";
 import shoe from "../../assets/shoes.png";
 import ContactFormInput from "../../components/ContactUs/ContactFormInput";
-import ContactHero from "../../components/ContactUs/ContactHero";
+import HeroText from "../../components/ContactUs/HeroText";
 import Background from "../../components/HomeComponents/Background";
 import TextUnderlined from "../../components/TextUnderlined";
 import { InfoOutlined } from "@mui/icons-material";
@@ -28,7 +28,7 @@ const Contact = () => {
             marginBlock: "clamp(3rem, 8vw + 2rem, 200px)",
           }}
         >
-          <ContactHero />
+          <HeroText>Contact Us</HeroText>
         </Box>
         <Box sx={{ background: "rgb(245, 247, 249)", paddingBlock: "5rem" }}>
           <Box sx={{ paddingBottom: "4rem" }}>
@@ -47,7 +47,6 @@ const Contact = () => {
           <Box
             sx={{
               paddingInline: "calc(9% - 1rem)",
-              backgroundColor: "EAF3FB",
               display: "grid",
               gridTemplateColumns: { md: "1fr 1fr", sm: "1fr" },
               gap: 5,
