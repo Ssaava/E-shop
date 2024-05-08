@@ -1,6 +1,9 @@
 import Typography from "@mui/material/Typography/Typography";
 
-const ContactHero = () => {
+type Props = {
+  children?: JSX.Element | string;
+};
+const HeroText = ({ children }: Props) => {
   return (
     <>
       <Typography
@@ -14,10 +17,10 @@ const ContactHero = () => {
           fontWeight: "bolder",
         }}
       >
-        Contact Us
+        {children}
       </Typography>
     </>
   );
 };
 
-export default ContactHero;
+export default HeroText;
