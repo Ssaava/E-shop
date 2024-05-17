@@ -16,7 +16,6 @@ const Home = () => {
           margin: "auto 0",
           background:
             "linear-gradient(to top,rgba(82, 91, 23, 0.25), rgba(0,0,0,0.3), rgba(255,255,255,0))",
-          // height: "max(50vw, 100vh - 117.317px)",
         }}
       >
         <Background

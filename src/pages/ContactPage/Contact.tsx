@@ -18,14 +18,19 @@ const Contact = () => {
   return (
     <>
       <Background
-        sx={{ gridTemplateColumns: "1fr", background: "rgba(0,0,0,0.7)" }}
+        sx={{ gridTemplateColumns: "1fr", background: "#166894" }}
         bgImg={shoe}
-        imgStyles={{ filter: "grayscale(80%)" }}
       />
-      <Box sx={{ width: "100%" }}>
+      <Box
+        sx={{
+          width: "100%",
+        }}
+      >
         <Box
           sx={{
-            marginBlock: "clamp(3rem, 8vw + 2rem, 200px)",
+            paddingBlock: "clamp(3rem, 8vw + 2rem, 200px)",
+            background:
+              "linear-gradient(to top,rgba(82, 91, 23, 0.25), rgba(0,0,0,0.3), rgba(255,255,255,0))",
           }}
         >
           <HeroText>Contact Us</HeroText>
