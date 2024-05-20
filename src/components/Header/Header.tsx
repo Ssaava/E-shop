@@ -6,10 +6,9 @@ import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import Link from "@mui/material/Link";
 import Toolbar from "@mui/material/Toolbar";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { MainContext } from "../../layouts/MainLayOut";
 import ScrollTop from "../scroll/ScrollTop";
 import DrawerLinks from "./Header-Components/DrawerLinks";
 import Logo from "./Header-Components/Logo";
@@ -19,8 +18,6 @@ import ShoppingCart from "./Header-Components/ShoppingCart";
 function Header() {
   const [toggleDrawer, setToggleDrawer] = useState<boolean>(false);
   // const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-
-  const { headerBackground } = useContext<object>(MainContext);
 
   const handleCloseDrawer = () => {
     setToggleDrawer(false);
@@ -46,7 +43,7 @@ function Header() {
       position="static"
       sx={{
         padding: 2,
-        ...headerBackground,
+        background: "rgba(0, 0, 0, 0.05)",
         boxShadow: "unset",
       }}
     >
