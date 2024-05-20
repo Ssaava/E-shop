@@ -10,6 +10,7 @@ const ProductInfo = () => {
           display: "grid",
           gridTemplateColumns: { md: "repeat(2, 1fr)", sm: "1fr" },
           gap: 4,
+          paddingBlock: "clamp(1.5rem, 1.1257rem + 2.994vw, 4rem)",
         }}
       >
         <ImageCoursel />
