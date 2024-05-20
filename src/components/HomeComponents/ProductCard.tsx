@@ -62,7 +62,7 @@ export default function ProductCard() {
         <CardActionArea disableRipple sx={{ cursor: "unset" }}>
           <Link
             component={NavLink}
-            to="/"
+            to="/product"
             onMouseEnter={() => handleIconDisplay("2rem")}
             onMouseLeave={() => handleIconHide("0rem")}
           >
