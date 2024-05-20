@@ -1,24 +1,20 @@
+import { InfoOutlined } from "@mui/icons-material";
+import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import shoe from "../../assets/shoes.png";
 import ContactFormInput from "../../components/ContactUs/ContactFormInput";
 import HeroText from "../../components/ContactUs/HeroText";
 import Background from "../../components/HomeComponents/Background";
 import TextUnderlined from "../../components/TextUnderlined";
-import { InfoOutlined } from "@mui/icons-material";
-import { MainContext } from "../../layouts/MainLayOut";
 const Contact = () => {
   const [formError, setFormError] = useState<boolean>(false);
-  const { setHeaderBackground } = useContext(MainContext);
-  window.addEventListener("load", () =>
-    setHeaderBackground({ background: "red" })
-  );
+
   console.log(setFormError);
   return (
     <>
