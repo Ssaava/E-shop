@@ -1,15 +1,9 @@
-import { InfoOutlined } from "@mui/icons-material";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import FormControl from "@mui/material/FormControl";
-import FormHelperText from "@mui/material/FormHelperText";
-import Stack from "@mui/material/Stack";
-import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import shoe from "../../assets/shoes.png";
-import ContactFormInput from "../../components/ContactUs/ContactFormInput";
-import HeroText from "../../components/ContactUs/HeroText";
+import ContactForm from "../../components/ContactPageComponents/ContactForm";
+import HeroText from "../../components/ContactPageComponents/HeroText";
 import Background from "../../components/HomeComponents/Background";
 import TextUnderlined from "../../components/TextUnderlined";
 const Contact = () => {
@@ -75,62 +69,8 @@ const Contact = () => {
                 You tell us. We listen.
               </Typography>
             </Box>
-            {/* contact form */}
-            <Box sx={{ backgroundColor: "white", padding: 4 }}>
-              <Box>
-                <form
-                  onSubmit={(event) => {
-                    event.preventDefault();
-                  }}
-                >
-                  <Stack spacing={3}>
-                    <ContactFormInput
-                      placeHolder="NAME"
-                      formError={formError}
-                    />
-                    <ContactFormInput
-                      placeHolder="SUBJECT"
-                      formError={formError}
-                    />
-                    <ContactFormInput
-                      placeHolder="EMAIL"
-                      formError={formError}
-                    />
-                    <FormControl error>
-                      <TextField placeholder="MESSAGE" required />
-                      {formError ? (
-                        <FormHelperText
-                          sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: 2,
-                            paddingTop: 2,
-                          }}
-                        >
-                          <InfoOutlined />
-                          Please write a message
-                        </FormHelperText>
-                      ) : (
-                        <></>
-                      )}
-                    </FormControl>
-                    <Button
-                      type="submit"
-                      sx={{
-                        width: "fit-content ",
-                        backgroundColor: "blue",
-                        padding: "5px 20px",
-                        color: "white",
-                        fontSize: "20px",
-                        "&:hover": { color: "white", backgroundColor: "blue" },
-                      }}
-                    >
-                      Submit
-                    </Button>
-                  </Stack>
-                </form>
-              </Box>
-            </Box>
+            {/* contact form on the right*/}
+            <ContactForm formError={formError} />
           </Box>
         </Box>
       </Box>

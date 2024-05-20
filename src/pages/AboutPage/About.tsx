@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box/Box";
 import shoe from "../../assets/shoes.png";
 import AboutUs from "../../components/AboutUsComponents/AboutUs";
-import HeroText from "../../components/ContactUs/HeroText";
+import HeroText from "../../components/ContactPageComponents/HeroText";
 import Background from "../../components/HomeComponents/Background";
 import OurTeam from "../../components/AboutUsComponents/OurTeam";
 const About = () => {

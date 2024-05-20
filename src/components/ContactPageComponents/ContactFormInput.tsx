@@ -1,19 +1,28 @@
 import { InfoOutlined } from "@mui/icons-material";
-import { FormControl, Input, FormHelperText } from "@mui/material";
+import { FormControl, FormHelperText, Input, TextField } from "@mui/material";
 
 type Props = {
   formError?: boolean;
   errorMessage?: string;
   placeHolder?: string;
+  type?: string;
 };
-const ContactFormInput = ({ formError, errorMessage, placeHolder }: Props) => {
+type FormError = {
+  formError: boolean;
+};
+const ContactFormInput = ({
+  formError,
+  errorMessage,
+  placeHolder,
+  type = "text",
+}: Props) => {
   return (
     <>
       <FormControl error>
         <Input
           placeholder={placeHolder}
           required
-          type="text"
+          type={type}
           sx={{
             border: "2px solid rgb(200, 200, 200)",
             padding: "5px 10px",
@@ -41,6 +50,30 @@ const ContactFormInput = ({ formError, errorMessage, placeHolder }: Props) => {
           >
             <InfoOutlined />
             {errorMessage}
+          </FormHelperText>
+        ) : (
+          <></>
+        )}
+      </FormControl>
+    </>
+  );
+};
+export const FormMessage = ({ formError }: FormError) => {
+  return (
+    <>
+      <FormControl error>
+        <TextField placeholder="MESSAGE" required />
+        {formError ? (
+          <FormHelperText
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 2,
+              paddingTop: 2,
+            }}
+          >
+            <InfoOutlined />
+            Please write a message
           </FormHelperText>
         ) : (
           <></>
