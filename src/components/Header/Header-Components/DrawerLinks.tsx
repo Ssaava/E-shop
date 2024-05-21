@@ -8,21 +8,13 @@ import ListItemText from "@mui/material/ListItemText";
 
 import Box from "@mui/material/Box";
 import { NavLink } from "react-router-dom";
-
-type CompanyInfo = {
-  title: string;
-  infoLink: string;
-  icon: JSX.Element;
-  marginRight?: number;
-};
+import { companyInfo, pages } from "../../../assets/utils/PageLinks";
 
 type Props = {
-  companyInfo: CompanyInfo[];
-  pages: string[] | number[];
   handleCloseDrawer: () => void;
 };
 
-const Categories = ({ companyInfo, pages, handleCloseDrawer }: Props) => {
+const DrawerLinks = ({ handleCloseDrawer }: Props) => {
   return (
     <>
       {/* display the categories links */}
@@ -65,4 +57,4 @@ const Categories = ({ companyInfo, pages, handleCloseDrawer }: Props) => {
   );
 };
 
-export default Categories;
+export default DrawerLinks;
