@@ -35,6 +35,8 @@ const Background = ({ bgImg, sx, imgStyles }: Props) => {
             display: { sm: "none", xs: "none", md: "block" },
           }}
         ></Box>
+
+        {/* display bg image if present else no image */}
         {bgImg && (
           <Box
             sx={{
@@ -42,7 +44,6 @@ const Background = ({ bgImg, sx, imgStyles }: Props) => {
               justifyContent: "flex-end",
             }}
           >
-            (
             <Typography
               component="img"
               src={bgImg}
@@ -52,7 +53,6 @@ const Background = ({ bgImg, sx, imgStyles }: Props) => {
                 ...imgStyles,
               }}
             />
-            )
           </Box>
         )}
       </Box>
