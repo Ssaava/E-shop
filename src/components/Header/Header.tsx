@@ -1,17 +1,12 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import MenuIcon from "@mui/icons-material/Menu";
-// @ts-ignore
 import AppBar from "@mui/material/AppBar";
-// @ts-ignore
 import Box from "@mui/material/Box";
-// @ts-ignore
 import Container from "@mui/material/Container";
-// @ts-ignore
 import Drawer from "@mui/material/Drawer";
-// @ts-ignore
 import IconButton from "@mui/material/IconButton";
-// @ts-ignore
 import Link from "@mui/material/Link";
-// @ts-ignore
 import Toolbar from "@mui/material/Toolbar";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
@@ -22,7 +17,7 @@ import Logo from "./Header-Components/Logo";
 import PagesLinks from "./Header-Components/PagesLinks";
 import ShoppingCart from "./Header-Components/ShoppingCart";
 
-function Header() {
+function Header({bgHeader}:{bgHeader: string}) {
   const [toggleDrawer, setToggleDrawer] = useState<boolean>(false);
   // const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
@@ -50,7 +45,7 @@ function Header() {
       position="static"
       sx={{
         padding: 2,
-        background: "rgba(0, 0, 0, 0.05)",
+        background: bgHeader === "" ? "rgba(0, 0, 0, 0.05)" : bgHeader,
         boxShadow: "unset",
       }}
     >

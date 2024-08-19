@@ -4,14 +4,16 @@ import Header from "../components/Header/Header";
 // @ts-ignore
 import { CssBaseline } from "@mui/material";
 import Footer from "../components/Footer/Footer";
+import {useState} from "react";
 
 
 const MainLayOut = () => {
+    const[bgHeader, setBgHeader] = useState<string>("");
   return (
    <>
        <CssBaseline />
-       <Header />
-       <Outlet />
+       <Header bgHeader={bgHeader}/>
+       <Outlet context={[setBgHeader]}/>
        <Footer />
    </>
   );

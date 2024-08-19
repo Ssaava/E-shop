@@ -5,7 +5,15 @@ import AboutUs from "../components/AboutUsComponents/AboutUs.tsx";
 import HeroText from "../components/ContactPageComponents/HeroText.tsx";
 import Background from "../components/HomeComponents/Background.tsx";
 import OurTeam from "../components/AboutUsComponents/OurTeam.tsx";
+import {useOutletContext} from "react-router-dom";
+import {useEffect} from "react";
 const About = () => {
+    // @ts-ignore
+    const [setBgHeader] = useOutletContext();
+    useEffect(() => {
+        setBgHeader("");
+        return
+    }, []);
   return (
     <>
       <Background

@@ -5,8 +5,16 @@ import Background from "../components/HomeComponents/Background.tsx";
 import HeroSection from "../components/HomeComponents/HeroSection.tsx";
 import ProductCard from "../components/HomeComponents/ProductCard.tsx";
 import TextUnderlined from "../components/TextUnderlined.tsx";
+import {useOutletContext} from "react-router-dom";
+import {useEffect} from "react";
 
 const Home = () => {
+    // @ts-ignore
+    const [setBgHeader] = useOutletContext();
+    useEffect(() => {
+        setBgHeader("rgba(0,0,0,1)");
+        return
+    }, []);
   return (
     <>
       {/* The Home Page */}
