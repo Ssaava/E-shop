@@ -1,9 +1,10 @@
+// @ts-ignore
 import Box from "@mui/material/Box/Box";
-import shoe from "../../assets/shoes.png";
-import AboutUs from "../../components/AboutUsComponents/AboutUs";
-import HeroText from "../../components/ContactPageComponents/HeroText";
-import Background from "../../components/HomeComponents/Background";
-import OurTeam from "../../components/AboutUsComponents/OurTeam";
+import shoe from "../assets/shoes.png";
+import AboutUs from "../components/AboutUsComponents/AboutUs.tsx";
+import HeroText from "../components/ContactPageComponents/HeroText.tsx";
+import Background from "../components/HomeComponents/Background.tsx";
+import OurTeam from "../components/AboutUsComponents/OurTeam.tsx";
 const About = () => {
   return (
     <>

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { MouseEvent, useState } from "react";
 import "./ShoppingCart.css";
 

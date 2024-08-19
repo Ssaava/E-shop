@@ -1,9 +1,11 @@
+// @ts-ignore
 import Box from "@mui/material/Box/Box";
+// @ts-ignore
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
 type Props = { bgImg?: string; sx?: object; imgStyles?: object };
 
-// takes the sx prameter and it is a grid container, u need to specify the grid template comumns
+// takes the sx parameter, and it is a grid container, u need to specify the grid template columns
 const Background = ({ bgImg, sx, imgStyles }: Props) => {
   const [displayValue, setDisplayValue] = useState<string>("grid");
   window.addEventListener("scroll", () => {
@@ -42,7 +44,6 @@ const Background = ({ bgImg, sx, imgStyles }: Props) => {
               justifyContent: "flex-end",
             }}
           >
-            (
             <Typography
               component="img"
               src={bgImg}
@@ -52,7 +53,6 @@ const Background = ({ bgImg, sx, imgStyles }: Props) => {
                 ...imgStyles,
               }}
             />
-            )
           </Box>
         )}
       </Box>

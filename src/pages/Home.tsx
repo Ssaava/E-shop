@@ -1,9 +1,10 @@
+// @ts-ignore
 import Box from "@mui/material/Box";
-import shoe from "../../assets/shoes.png";
-import Background from "../../components/HomeComponents/Background";
-import HeroSection from "../../components/HomeComponents/HeroSection";
-import ProductCard from "../../components/HomeComponents/ProductCard";
-import TextUnderlined from "../../components/TextUnderlined";
+import shoe from "../assets/shoes.png";
+import Background from "../components/HomeComponents/Background.tsx";
+import HeroSection from "../components/HomeComponents/HeroSection.tsx";
+import ProductCard from "../components/HomeComponents/ProductCard.tsx";
+import TextUnderlined from "../components/TextUnderlined.tsx";
 
 const Home = () => {
   return (

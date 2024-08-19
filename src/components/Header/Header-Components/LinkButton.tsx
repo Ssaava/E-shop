@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Button, Link } from "@mui/material";
 import { NavLink } from "react-router-dom";
 

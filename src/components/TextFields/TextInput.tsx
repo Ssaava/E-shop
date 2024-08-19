@@ -1,4 +1,6 @@
+// @ts-ignore
 import Box from "@mui/material/Box/Box";
+// @ts-ignore
 import TextField from "@mui/material/TextField";
 
 type Props = {

@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import ItemCard from "../../components/PageNotFoundComponents/ItemCard";
-import Message from "../../components/PageNotFoundComponents/Message";
+import ItemCard from "../components/PageNotFoundComponents/ItemCard.tsx";
+import Message from "../components/PageNotFoundComponents/Message.tsx";
 const PageNotFound = () => {
   return (
     <>

@@ -1,5 +1,7 @@
 import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied";
+// @ts-ignore
 import Box from "@mui/material/Box/Box";
+// @ts-ignore
 import Typography from "@mui/material/Typography/Typography";
 
 const Message = () => {

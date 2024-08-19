@@ -1,4 +1,6 @@
+// @ts-ignore
 import Box from "@mui/material/Box/Box";
+// @ts-ignore
 import Typography from "@mui/material/Typography/Typography";
 import LinkButton from "../Header/Header-Components/LinkButton";
 

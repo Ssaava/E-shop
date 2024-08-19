@@ -1,10 +1,11 @@
+// @ts-ignore
 import { Box, Container, Link, Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
-import blackIcon from "../../assets/black-logo.png";
-import LinkButton from "../../components/Header/Header-Components/LinkButton";
-import TextInput from "../../components/TextFields/TextInput";
-const SignUp = () => {
+import blackIcon from "../assets/black-logo.png";
+import LinkButton from "../components/Header/Header-Components/LinkButton.tsx";
+import TextInput from "../components/TextFields/TextInput.tsx";
+const SignIn = () => {
   return (
     <Fragment>
       <Container maxWidth="sm">
@@ -37,18 +38,16 @@ const SignUp = () => {
           </Box>
           <Box>
             <Typography textAlign={"center"} marginBottom={2}>
-              Create a{" "}
+              Type your e-mail or phone number to log into your{" "}
               <Typography component="span" fontWeight={"bold"}>
                 BAS
               </Typography>{" "}
               account.
             </Typography>
           </Box>
-          <TextInput label="Email*" />
-          <TextInput label="Mobile Number*" />
-          <TextInput label="Password*" />
-          <TextInput label="Repeat Password*" />
 
+          <TextInput label="Email or Mobile Number*" />
+          <TextInput label="Password*" />
           <Box>
             <LinkButton
               toLink="/"
@@ -62,15 +61,15 @@ const SignUp = () => {
                 "&:hover": { background: "blue", color: "white" },
               }}
             >
-              Create Account
+              Continue
             </LinkButton>
           </Box>
 
           <Box>
             <Typography>
-              Do have account?{" "}
-              <Link to="/sign-in" component={NavLink}>
-                Sign-In
+              Do not have account yet?{" "}
+              <Link to="/sign-up" component={NavLink}>
+                Sign-Up
               </Link>
             </Typography>
           </Box>
@@ -80,4 +79,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignIn;

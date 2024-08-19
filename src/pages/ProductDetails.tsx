@@ -1,5 +1,5 @@
 import Box from "@mui/material/Box/Box";
-import ProductInfo from "../../components/ProductDetails/ProductInfo";
+import ProductInfo from "../components/ProductDetails/ProductInfo.tsx";
 
 const ProductDetails = () => {
   return (
