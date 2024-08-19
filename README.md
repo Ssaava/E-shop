@@ -5,7 +5,6 @@
 - ### Front-End
   - vite + React js
   - TypeScript
-  - Tailwindcss
   - Material UI
   - Vercel
   - ZOD
