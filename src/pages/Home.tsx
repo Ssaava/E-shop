@@ -12,7 +12,7 @@ const Home = () => {
     // @ts-ignore
     const [setBgHeader] = useOutletContext();
     useEffect(() => {
-        setBgHeader("rgba(0,0,0,1)");
+        setBgHeader("");
         return
     }, []);
   return (
