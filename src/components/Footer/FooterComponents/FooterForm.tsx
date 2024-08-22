@@ -1,5 +1,3 @@
-
-// @ts-nocheck
 import { Button, TextField, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 

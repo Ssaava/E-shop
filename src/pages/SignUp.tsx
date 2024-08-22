@@ -1,4 +1,3 @@
-// @ts-ignore
 import { Box, Container, Link, Typography } from "@mui/material";
 import {NavLink, useOutletContext} from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";

@@ -5,17 +5,11 @@ import Box from "@mui/material/Box/Box";
 import Card from "@mui/material/Card";
 // @ts-ignore
 import CardActionArea from "@mui/material/CardActionArea/CardActionArea";
-// @ts-ignore
 import CardContent from "@mui/material/CardContent";
-// @ts-ignore
 import CardMedia from "@mui/material/CardMedia";
-// @ts-ignore
 import Link from "@mui/material/Link/Link";
-// @ts-ignore
 import Rating from "@mui/material/Rating/Rating";
-// @ts-ignore
 import Tooltip from "@mui/material/Tooltip/Tooltip";
-// @ts-ignore
 import Typography from "@mui/material/Typography/Typography";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";

@@ -1,4 +1,4 @@
-// @ts-nocheck
+
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import ItemCard from "../components/PageNotFoundComponents/ItemCard.tsx";
@@ -6,6 +6,7 @@ import Message from "../components/PageNotFoundComponents/Message.tsx";
 import {useOutletContext} from "react-router-dom";
 import {useEffect} from "react";
 const PageNotFound = () => {
+    // @ts-ignore
     const [setBgHeader] = useOutletContext();
     useEffect(() => {
         setBgHeader("rgba(0,0,0,1)");

@@ -1,4 +1,3 @@
-// @ts-ignore
 import Typography from "@mui/material/Typography/Typography";
 
 const TextUnderlined = ({ children }: { children: JSX.Element | string }) => {
@@ -10,7 +9,7 @@ const TextUnderlined = ({ children }: { children: JSX.Element | string }) => {
           paddingBottom: "clamp(1rem, 8vw - 6rem, 2rem)",
           position: "relative",
           fontSize: "clamp(2rem, -1.6875rem + 8vw, 3rem)",
-          fontweight: "bolder",
+          fontWeight: "bolder",
           "&:after": {
             content: `" "`,
             position: "absolute",

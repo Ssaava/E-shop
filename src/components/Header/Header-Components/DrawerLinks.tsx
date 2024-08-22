@@ -1,4 +1,3 @@
-// @ts-nocheck
 import Avatar from "@mui/material/Avatar";
 import Divider from "@mui/material/Divider";
 import List from "@mui/material/List";

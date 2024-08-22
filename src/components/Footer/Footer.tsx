@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { Divider, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import FooterItems from "./FooterComponents/FooterItems";

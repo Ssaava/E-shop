@@ -1,6 +1,4 @@
-// @ts-ignore
 import Box from "@mui/material/Box";
-// @ts-ignore
 import Typography from "@mui/material/Typography";
 import {useEffect, useState} from "react";
 import shoe from "../assets/shoes.png";
