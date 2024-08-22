@@ -1,28 +1,17 @@
-<<<<<<< HEAD:src/pages/SignInPage/SignIn.tsx
+// @ts-nocheck
 import { Box, Button, Container, Link, Typography } from "@mui/material";
-import { NavLink } from "react-router-dom";
-import { Fragment } from "react/jsx-runtime";
-import blackIcon from "../../assets/black-logo.png";
-import TextInput from "../../components/TextFields/TextInput";
-=======
-// @ts-ignore
-import { Box, Container, Link, Typography } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { useEffect } from "react";
 import { Fragment } from "react/jsx-runtime";
 import blackIcon from "../assets/black-logo.png";
-import LinkButton from "../components/Header/Header-Components/LinkButton.tsx";
-import TextInput from "../components/TextFields/TextInput.tsx";
-import {useOutletContext} from "react-router-dom";
-import {useEffect} from "react";
+import TextInput from "../components/TextFields/TextInput";
+import { NavLink, useOutletContext } from "react-router-dom";
 
->>>>>>> main:src/pages/SignIn.tsx
 const SignIn = () => {
-    // @ts-ignore
-    const [setBgHeader] = useOutletContext();
-    useEffect(() => {
-        setBgHeader("blue");
-        return
-    }, []);
+  const [setBgHeader] = useOutletContext();
+  useEffect(() => {
+    setBgHeader("blue");
+    return;
+  }, []);
 
   return (
     <Fragment>
