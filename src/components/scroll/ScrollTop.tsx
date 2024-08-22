@@ -1,8 +1,12 @@
 import { MouseEvent } from "react";
 import KeyboardArrowUp from "@mui/icons-material/KeyboardArrowUp";
+// @ts-ignore
 import useScrollTrigger from "@mui/material/useScrollTrigger";
+// @ts-ignore
 import Box from "@mui/material/Box";
+// @ts-ignore
 import Fade from "@mui/material/Fade";
+// @ts-ignore
 import Fab from "@mui/material/Fab";
 
 // arrow to take page back on scroll

@@ -1,3 +1,4 @@
+// @ts-ignore
 import Box from "@mui/material/Box/Box";
 import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";

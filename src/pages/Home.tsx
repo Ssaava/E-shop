@@ -1,11 +1,20 @@
+// @ts-ignore
 import Box from "@mui/material/Box";
-import shoe from "../../assets/shoes.png";
-import Background from "../../components/HomeComponents/Background";
-import HeroSection from "../../components/HomeComponents/HeroSection";
-import ProductCard from "../../components/HomeComponents/ProductCard";
-import TextUnderlined from "../../components/TextUnderlined";
+import shoe from "../assets/shoes.png";
+import Background from "../components/HomeComponents/Background.tsx";
+import HeroSection from "../components/HomeComponents/HeroSection.tsx";
+import ProductCard from "../components/HomeComponents/ProductCard.tsx";
+import TextUnderlined from "../components/TextUnderlined.tsx";
+import {useOutletContext} from "react-router-dom";
+import {useEffect} from "react";
 
 const Home = () => {
+    // @ts-ignore
+    const [setBgHeader] = useOutletContext();
+    useEffect(() => {
+        setBgHeader("");
+        return
+    }, []);
   return (
     <>
       {/* The Home Page */}

@@ -1,3 +1,4 @@
+// @ts-ignore
 import Box from "@mui/material/Box";
 import ImageCoursel from "./ProductInfoComponents/ImageCoursel";
 import ProductDetails from "./ProductInfoComponents/ProductDetails";

@@ -5,16 +5,16 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import MainLayOut from "./layouts/MainLayOut";
-import About from "./pages/AboutPage/About";
-import Checkout from "./pages/CheckoutPage/Checkout";
-import Contact from "./pages/ContactPage/Contact";
-import Home from "./pages/HomePage/Home";
-import PageNotFound from "./pages/PageNotFound/PageNotFound";
-import ProductDetails from "./pages/ProductDetailsPage/ProductDetails";
-import Products from "./pages/ProductsPage/Products";
-import Profile from "./pages/ProfilePage/Profile";
-import SignIn from "./pages/SignInPage/SignIn";
-import SignUp from "./pages/SignUpPage/SignUp";
+import About from "./pages/About.tsx";
+import Checkout from "./pages/Checkout.tsx";
+import Contact from "./pages/Contact.tsx";
+import Home from "./pages/Home.tsx";
+import PageNotFound from "./pages/PageNotFound.tsx";
+import ProductDetails from "./pages/ProductDetails.tsx";
+import Products from "./pages/Products.tsx";
+import Profile from "./pages/Profile.tsx";
+import SignIn from "./pages/SignIn.tsx";
+import SignUp from "./pages/SignUp.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

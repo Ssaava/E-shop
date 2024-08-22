@@ -1,5 +1,8 @@
+// @ts-ignore
 import Box from "@mui/material/Box";
+// @ts-ignore
 import Button from "@mui/material/Button";
+// @ts-ignore
 import Stack from "@mui/material/Stack";
 import ContactFormInput, { FormMessage } from "./ContactFormInput";
 

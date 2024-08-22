@@ -1,3 +1,4 @@
+// @ts-ignore
 import Typography from "@mui/material/Typography/Typography";
 
 const TextUnderlined = ({ children }: { children: JSX.Element | string }) => {

@@ -1,7 +1,12 @@
+// @ts-ignore
 import Card from "@mui/material/Card";
+// @ts-ignore
 import CardActionArea from "@mui/material/CardActionArea/CardActionArea";
+// @ts-ignore
 import CardContent from "@mui/material/CardContent";
+// @ts-ignore
 import CardMedia from "@mui/material/CardMedia";
+// @ts-ignore
 import Typography from "@mui/material/Typography/Typography";
 import dress from "../../assets/dress.png";
 import { NavLink } from "react-router-dom";

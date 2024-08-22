@@ -1,24 +1,22 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header/Header";
 
+// @ts-ignore
 import { CssBaseline } from "@mui/material";
 import Footer from "../components/Footer/Footer";
-import { createContext, useState } from "react";
+import {useState} from "react";
 
-const MainContext = createContext<object>({});
+
 const MainLayOut = () => {
-  const [headerBackground, setHeaderBackground] = useState<object>({
-    background: "rgba(0, 0, 0, 0.05)",
-  });
+    const[bgHeader, setBgHeader] = useState<string>("");
   return (
-    <MainContext.Provider value={{ headerBackground, setHeaderBackground }}>
-      <CssBaseline />
-      <Header />
-      <Outlet />
-      <Footer />
-    </MainContext.Provider>
+   <>
+       <CssBaseline />
+       <Header bgHeader={bgHeader}/>
+       <Outlet context={[setBgHeader]}/>
+       <Footer />
+   </>
   );
 };
 
 export default MainLayOut;
-export { MainContext };

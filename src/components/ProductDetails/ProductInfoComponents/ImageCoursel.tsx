@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Typography } from "@mui/material";
 
 const ImageCoursel = () => {

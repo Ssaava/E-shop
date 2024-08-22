@@ -1,10 +1,18 @@
+// @ts-ignore
 import { Box, Container, Link, Typography } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import {NavLink, useOutletContext} from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
-import blackIcon from "../../assets/black-logo.png";
-import LinkButton from "../../components/Header/Header-Components/LinkButton";
-import TextInput from "../../components/TextFields/TextInput";
+import blackIcon from "../assets/black-logo.png";
+import LinkButton from "../components/Header/Header-Components/LinkButton.tsx";
+import TextInput from "../components/TextFields/TextInput.tsx";
+import {useEffect} from "react";
 const SignUp = () => {
+    // @ts-ignore
+    const [setBgHeader] = useOutletContext();
+    useEffect(() => {
+        setBgHeader("blue");
+        return
+    }, []);
   return (
     <Fragment>
       <Container maxWidth="sm">

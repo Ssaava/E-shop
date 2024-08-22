@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -15,7 +17,7 @@ import Logo from "./Header-Components/Logo";
 import PagesLinks from "./Header-Components/PagesLinks";
 import ShoppingCart from "./Header-Components/ShoppingCart";
 
-function Header() {
+function Header({bgHeader}:{bgHeader: string}) {
   const [toggleDrawer, setToggleDrawer] = useState<boolean>(false);
   // const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
@@ -43,7 +45,7 @@ function Header() {
       position="static"
       sx={{
         padding: 2,
-        background: "rgba(0, 0, 0, 0.05)",
+        background: bgHeader === "" ? "rgba(0, 0, 0, 0.05)" : bgHeader,
         boxShadow: "unset",
       }}
     >

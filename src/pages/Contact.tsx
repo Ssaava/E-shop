@@ -1,13 +1,22 @@
+// @ts-ignore
 import Box from "@mui/material/Box";
+// @ts-ignore
 import Typography from "@mui/material/Typography";
-import { useState } from "react";
-import shoe from "../../assets/shoes.png";
-import ContactForm from "../../components/ContactPageComponents/ContactForm";
-import HeroText from "../../components/ContactPageComponents/HeroText";
-import Background from "../../components/HomeComponents/Background";
-import TextUnderlined from "../../components/TextUnderlined";
+import {useEffect, useState} from "react";
+import shoe from "../assets/shoes.png";
+import ContactForm from "../components/ContactPageComponents/ContactForm.tsx";
+import HeroText from "../components/ContactPageComponents/HeroText.tsx";
+import Background from "../components/HomeComponents/Background.tsx";
+import TextUnderlined from "../components/TextUnderlined.tsx";
+import {useOutletContext} from "react-router-dom";
 const Contact = () => {
-  const [formError, setFormError] = useState<boolean>(false);
+  const [formError, setFormError] = useState<boolean>(false)
+    // @ts-ignore
+    const [setBgHeader] = useOutletContext();
+    useEffect(() => {
+        setBgHeader("");
+        return
+    }, []);
 
   console.log(setFormError);
   return (
@@ -35,8 +44,7 @@ const Contact = () => {
             <Typography
               sx={{
                 textAlign: "center",
-
-                fontweight: "bolder",
+                fontWeight: "bolder",
               }}
             >
               Have any Queries?
