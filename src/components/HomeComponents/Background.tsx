@@ -37,6 +37,8 @@ const Background = ({ bgImg, sx, imgStyles }: Props) => {
             display: { sm: "none", xs: "none", md: "block" },
           }}
         ></Box>
+
+        {/* display bg image if present else no image */}
         {bgImg && (
           <Box
             sx={{

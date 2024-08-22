@@ -1,20 +1,17 @@
-// @ts-ignore
-import { Box, Container, Link, Typography } from "@mui/material";
-import { NavLink } from "react-router-dom";
+// @ts-nocheck
+import { Box, Button, Container, Link, Typography } from "@mui/material";
+import { useEffect } from "react";
 import { Fragment } from "react/jsx-runtime";
 import blackIcon from "../assets/black-logo.png";
-import LinkButton from "../components/Header/Header-Components/LinkButton.tsx";
-import TextInput from "../components/TextFields/TextInput.tsx";
-import {useOutletContext} from "react-router-dom";
-import {useEffect} from "react";
+import TextInput from "../components/TextFields/TextInput";
+import { NavLink, useOutletContext } from "react-router-dom";
 
 const SignIn = () => {
-    // @ts-ignore
-    const [setBgHeader] = useOutletContext();
-    useEffect(() => {
-        setBgHeader("blue");
-        return
-    }, []);
+  const [setBgHeader] = useOutletContext();
+  useEffect(() => {
+    setBgHeader("blue");
+    return;
+  }, []);
 
   return (
     <Fragment>
@@ -56,24 +53,43 @@ const SignIn = () => {
             </Typography>
           </Box>
 
-          <TextInput label="Email or Mobile Number*" />
-          <TextInput label="Password*" />
-          <Box>
-            <LinkButton
-              toLink="/"
-              buttonStyling={{
-                backgroundColor: "blue",
-                color: "white",
-                width: "100%",
-                boxShadow: "unset",
-                marginBlock: 2,
-                paddingBlock: "15px",
-                "&:hover": { background: "blue", color: "white" },
-              }}
-            >
-              Continue
-            </LinkButton>
-          </Box>
+          {/* form to collect login details */}
+          <form
+            action="#"
+            method="POST"
+            onSubmit={(e) => {
+              e.preventDefault();
+              console.log(e);
+            }}
+          >
+            <TextInput
+              name="email"
+              label="Email or Mobile Number*"
+              errorMessage="please provide email"
+            />
+            <TextInput
+              name="userName"
+              label="User Name*"
+              errorMessage="please provide name"
+            />
+
+            <Box>
+              <Button
+                type="submit"
+                sx={{
+                  backgroundColor: "blue",
+                  color: "white",
+                  width: "100%",
+                  boxShadow: "unset",
+                  marginBlock: 2,
+                  paddingBlock: "15px",
+                  "&:hover": { background: "blue", color: "white" },
+                }}
+              >
+                Continue
+              </Button>
+            </Box>
+          </form>
 
           <Box>
             <Typography>
