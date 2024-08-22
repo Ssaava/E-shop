@@ -1,4 +1,3 @@
-// @ts-ignore
 import Box from "@mui/material/Box";
 import shoe from "../assets/shoes.png";
 import Background from "../components/HomeComponents/Background.tsx";

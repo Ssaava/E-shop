@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { ArrowBack } from "@mui/icons-material";
 
 import List from "@mui/material/List";

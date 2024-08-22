@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { InfoOutlined } from "@mui/icons-material";
 import { FormControl, FormHelperText, Input, TextField } from "@mui/material";
 

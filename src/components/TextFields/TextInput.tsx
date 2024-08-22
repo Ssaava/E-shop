@@ -1,4 +1,3 @@
-// @ts-ignore
 import Box from "@mui/material/Box/Box";
 import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
@@ -6,7 +5,7 @@ import TextField from "@mui/material/TextField";
 
 type Props = {
   label: string;
-  name: string;
+  name?: string;
   errorMessage?: string;
 };
 const TextInput = ({ label, name, errorMessage }: Props) => {

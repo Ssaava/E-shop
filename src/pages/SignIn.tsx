@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { Box, Button, Container, Link, Typography } from "@mui/material";
 import { useEffect } from "react";
 import { Fragment } from "react/jsx-runtime";
@@ -7,7 +6,8 @@ import TextInput from "../components/TextFields/TextInput";
 import { NavLink, useOutletContext } from "react-router-dom";
 
 const SignIn = () => {
-  const [setBgHeader] = useOutletContext();
+  // @ts-ignore
+    const [setBgHeader] = useOutletContext();
   useEffect(() => {
     setBgHeader("blue");
     return;
