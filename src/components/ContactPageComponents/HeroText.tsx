@@ -1,4 +1,5 @@
-import Typography from "@mui/material/Typography/Typography";
+import Typography from "@mui/material/Typography";
+import { JSX } from "react";
 
 type Props = {
   children?: JSX.Element | string;

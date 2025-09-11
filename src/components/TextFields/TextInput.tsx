@@ -1,4 +1,4 @@
-import Box from "@mui/material/Box/Box";
+import Box from "@mui/material/Box";
 import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
 import TextField from "@mui/material/TextField";
