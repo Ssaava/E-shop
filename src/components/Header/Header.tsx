@@ -15,7 +15,7 @@ import Logo from "./Header-Components/Logo";
 import PagesLinks from "./Header-Components/PagesLinks";
 import ShoppingCart from "./Header-Components/ShoppingCart";
 
-function Header({bgHeader}:{bgHeader: string}) {
+function Header() {
   const [toggleDrawer, setToggleDrawer] = useState<boolean>(false);
   // const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
@@ -43,7 +43,7 @@ function Header({bgHeader}:{bgHeader: string}) {
       position="static"
       sx={{
         padding: 2,
-        background: bgHeader === "" ? "rgba(0, 0, 0, 0.05)" : bgHeader,
+        background: "rgba(0, 0, 0, 0.05)",
         boxShadow: "unset",
       }}
     >

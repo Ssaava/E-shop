@@ -1,18 +1,10 @@
 import { Box, Button, Container, Link, Typography } from "@mui/material";
-import { useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
 import blackIcon from "../assets/black-logo.png";
 import TextInput from "../components/TextFields/TextInput";
-import { NavLink, useOutletContext } from "react-router-dom";
 
 const SignIn = () => {
-  // @ts-ignore
-    const [setBgHeader] = useOutletContext();
-  useEffect(() => {
-    setBgHeader("blue");
-    return;
-  }, []);
-
   return (
     <Fragment>
       <Container maxWidth="sm">

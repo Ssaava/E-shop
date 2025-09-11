@@ -1,20 +1,13 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import {useEffect, useState} from "react";
+import { useState } from "react";
 import shoe from "../assets/shoes.png";
 import ContactForm from "../components/ContactPageComponents/ContactForm.tsx";
 import HeroText from "../components/ContactPageComponents/HeroText.tsx";
 import Background from "../components/HomeComponents/Background.tsx";
 import TextUnderlined from "../components/TextUnderlined.tsx";
-import {useOutletContext} from "react-router-dom";
 const Contact = () => {
-  const [formError, setFormError] = useState<boolean>(false)
-    // @ts-ignore
-    const [setBgHeader] = useOutletContext();
-    useEffect(() => {
-        setBgHeader("");
-        return
-    }, []);
+  const [formError, setFormError] = useState<boolean>(false);
 
   console.log(setFormError);
   return (
