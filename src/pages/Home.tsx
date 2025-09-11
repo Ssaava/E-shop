@@ -1,9 +1,11 @@
 import Box from "@mui/material/Box";
 import shoe from "../assets/shoes.png";
 import Background from "../components/HomeComponents/Background.tsx";
+import DealsCard from "../components/HomeComponents/DealsCard.tsx";
+import FeaturedProducts from "../components/HomeComponents/FeaturedProducts.tsx";
 import HeroSection from "../components/HomeComponents/HeroSection.tsx";
-import ProductCard from "../components/HomeComponents/ProductCard.tsx";
 import TextUnderlined from "../components/TextUnderlined.tsx";
+import Grid from "@mui/material/Grid";
 
 const Home = () => {
   return (
@@ -28,6 +30,32 @@ const Home = () => {
         <HeroSection />
         {/* items section */}
       </Box>
+
+      {/* deals */}
+      <Box
+        sx={{
+          background: "white",
+          paddingBlock: "4rem",
+          paddingInline: "calc(18% - 2.5rem)",
+        }}
+      >
+        <TextUnderlined>Deals and Offers</TextUnderlined>
+        
+        <Grid marginTop={"3rem"} container gap={4}>
+          <Grid item xs={12} md={6} lg={4}>
+            <DealsCard />
+          </Grid>
+          <Grid item xs={12} md={6} lg={4}>
+            <DealsCard />
+          </Grid>
+          <Grid item xs={12} md={6} lg={4}>
+            <DealsCard />
+          </Grid>
+        </Grid>
+        <Box
+          sx={{ display: "grid", gridTemplateColumns: 3, gap: "0.8rem" }}
+        ></Box>
+      </Box>
       <Box
         sx={{
           background: "rgb(245, 247, 249)",
@@ -35,30 +63,9 @@ const Home = () => {
           paddingInline: "calc(9% - 1rem)",
         }}
       >
-        <Box>
-          <TextUnderlined>Featured Products</TextUnderlined>
-          {/* Products go here */}
-          <Box
-            sx={{ marginBlock: 8, width: "100%", backgroundColor: "F5F7F9" }}
-          >
-            <Box
-              sx={{
-                padding: "unset",
-                display: "grid",
-                gridTemplateColumns: {
-                  md: "repeat(5, 1fr)",
-                  sm: "repeat(3, 1fr)",
-                  xs: "repeat(2, 1fr)",
-                },
-                gap: { xs: 1, sm: 2 },
-              }}
-            >
-              <ProductCard /> <ProductCard /> <ProductCard /> <ProductCard />{" "}
-              <ProductCard /> <ProductCard /> <ProductCard /> <ProductCard />{" "}
-              <ProductCard /> <ProductCard />
-            </Box>
-          </Box>
-        </Box>
+        {/* featured products */}
+
+        <FeaturedProducts />
       </Box>
     </>
   );
