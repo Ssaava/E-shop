@@ -1,20 +1,16 @@
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
-// @ts-ignore
-import Box from "@mui/material/Box/Box";
-// @ts-ignore
 import Card from "@mui/material/Card";
-// @ts-ignore
-import CardActionArea from "@mui/material/CardActionArea/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-
+import Link from "@mui/material/Link";
+import Rating from "@mui/material/Rating";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import short from "../../assets/short.png";
-import Link from "@mui/material/Link";
-import Tooltip from "@mui/material/Tooltip";
-import Typography from "@mui/material/Typography";
-import Rating from "@mui/material/Rating";
+import CardActionArea from "@mui/material/CardActionArea";
+import Box from "@mui/material/Box";
 
 export default function ProductCard() {
   const [iconDisplay, setIconDisplay] = useState<string>("0rem");
