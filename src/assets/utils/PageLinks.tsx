@@ -2,6 +2,7 @@ import { PersonAdd } from "@mui/icons-material";
 import Settings from "@mui/icons-material/Settings";
 import CallIcon from "@mui/icons-material/Call";
 import InfoIconOutlined from "@mui/icons-material/InfoOutlined";
+import { JSX } from "react";
 /**
  * @DATA_TYPE of the data to be exported
  */

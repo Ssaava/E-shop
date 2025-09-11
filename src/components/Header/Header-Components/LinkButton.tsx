@@ -1,4 +1,5 @@
 import { Button, Link } from "@mui/material";
+import { JSX } from "react";
 import { NavLink } from "react-router-dom";
 
 type Props = {

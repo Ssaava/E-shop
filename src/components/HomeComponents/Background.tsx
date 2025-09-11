@@ -1,4 +1,4 @@
-import Box from "@mui/material/Box/Box";
+import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
 type Props = { bgImg?: string; sx?: object; imgStyles?: object };

@@ -1,4 +1,4 @@
-import Box from "@mui/material/Box/Box";
+import Box from "@mui/material/Box";
 import shoe from "../assets/shoes.png";
 import AboutUs from "../components/AboutUsComponents/AboutUs.tsx";
 import OurTeam from "../components/AboutUsComponents/OurTeam.tsx";

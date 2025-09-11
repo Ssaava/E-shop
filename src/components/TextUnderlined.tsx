@@ -1,4 +1,5 @@
-import Typography from "@mui/material/Typography/Typography";
+import Typography from "@mui/material/Typography";
+import { JSX } from "react";
 
 const TextUnderlined = ({ children }: { children: JSX.Element | string }) => {
   return (

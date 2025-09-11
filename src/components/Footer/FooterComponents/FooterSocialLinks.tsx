@@ -5,7 +5,7 @@ import {
   Twitter,
   YouTube,
 } from "@mui/icons-material";
-import Box from "@mui/material/Box/Box";
+import Box from "@mui/material/Box";
 
 const FooterSocialLinks = () => {
   return (

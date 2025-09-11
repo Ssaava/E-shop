@@ -1,7 +1,6 @@
-// @ts-ignore
-import Box from "@mui/material/Box/Box";
-import Typography from "@mui/material/Typography/Typography";
+import Box from "@mui/material/Box";
 import LinkButton from "../Header/Header-Components/LinkButton";
+import Typography from "@mui/material/Typography";
 
 const HeroSection = () => {
   return (

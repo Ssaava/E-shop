@@ -1,10 +1,9 @@
-import Box from "@mui/material/Box/Box";
-import Button from "@mui/material/Button/Button";
-import Divider from "@mui/material/Divider/Divider";
-import createTheme from "@mui/material/styles/createTheme";
-import ThemeProvider from "@mui/material/styles/ThemeProvider";
-import TextField from "@mui/material/TextField/TextField";
-import Typography from "@mui/material/Typography/Typography";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Divider from "@mui/material/Divider";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
 
 const theme = createTheme({
   components: {

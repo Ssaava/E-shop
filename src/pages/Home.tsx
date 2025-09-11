@@ -40,15 +40,15 @@ const Home = () => {
         }}
       >
         <TextUnderlined>Deals and Offers</TextUnderlined>
-        
+
         <Grid marginTop={"3rem"} container gap={4}>
-          <Grid item xs={12} md={6} lg={4}>
+          <Grid size={{ xs: 12, md: 6, lg: 4 }}>
             <DealsCard />
           </Grid>
-          <Grid item xs={12} md={6} lg={4}>
+          <Grid size={{ xs: 12, md: 6, lg: 4 }}>
             <DealsCard />
           </Grid>
-          <Grid item xs={12} md={6} lg={4}>
+          <Grid size={{ xs: 12, md: 6, lg: 4 }}>
             <DealsCard />
           </Grid>
         </Grid>
